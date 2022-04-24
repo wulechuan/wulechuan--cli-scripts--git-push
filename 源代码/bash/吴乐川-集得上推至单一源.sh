@@ -1,6 +1,6 @@
 #!/bin/sh
 
-function 吴乐川-集德上推至单一源 {
+function 吴乐川-集得上推至单一源 {
     local shouldDebug=false
 
     # 给出的参数须依照下列顺序出现！尽管其中多数参数可省略。但一旦出现，顺序不可错误。
@@ -32,7 +32,7 @@ function 吴乐川-集德上推至单一源 {
     fi
 
     if [ -z "$gitOriginName" ]; then
-        echo -e "\e[31m吴乐川-集德上推至单一源 函数的参数错误\e[0m：\e[33m--git-origin-name\e[0m 未给出有效的值。"
+        echo -e "\e[31m吴乐川-集得上推至单一源 函数的参数错误\e[0m：\e[33m--git-origin-name\e[0m 未给出有效的值。"
         return 1
     fi
 

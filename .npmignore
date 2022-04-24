@@ -1,1 +1,7 @@
+.vs/**/*
+.vscode
+
 用于研发阶段的命令行工具
+
+.markdownlint.json
+ReadMe.html

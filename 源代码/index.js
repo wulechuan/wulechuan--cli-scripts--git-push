@@ -3,7 +3,7 @@ const 单层缩进 = ' '.repeat(4)
 const 列表符号 = '* '
 const 单层缩进含列表符号 = `${单层缩进.slice(0, -列表符号.length)}${列表符号}`
 
-console.log(`npm 包： ${
+console.log(`\nnpm 包： ${
     packageJSON.name
 }\n\n${单层缩进含列表符号}${
     packageJSON.description
@@ -13,8 +13,8 @@ console.log(`npm 包： ${
     单层缩进含列表符号
 }PowerShell ：\n${
     单层缩进.repeat(2)
-}.\\应用示例\\PowerShell\\Push-将代码依次上推至多个集德源.ps1\n\n${
+}.\\应用示例\\PowerShell\\Push-将代码依次上推至多个集得源.ps1\n\n${
     单层缩进含列表符号
 }bash ：\n${
     单层缩进.repeat(2)
-}./应用示例/bash/集德-将代码库依次上推至多个源.sh`)
+}./应用示例/bash/集得-将代码库依次上推至多个源.sh`)

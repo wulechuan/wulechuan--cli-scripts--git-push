@@ -2,22 +2,22 @@
   "name": "@wulechuan/cli-scripts--git-push",
   "author": "吴乐川 <wulechuan@live.com>",
   "license": "WTFPL",
-  "version": "1.0.1",
-  "description": "吴乐川的【集德（ Git ）】上推（外国话是 push ）辅助命令行工具。本工具之主体并非采用 JavaScript 语言族编写，而是采用各种命令行环境之语言编写。本工具主体仅用于（多种）命令行环境。当须将一个 npm 研发项目之代码库上推至多个【集德】源时，本工具可提供些许便利。",
+  "version": "2.0.0",
+  "description": "吴乐川的【集得（ Git ）】上推（外国话是 push ）辅助命令行工具。本工具之主体并非采用 JavaScript 语言族编写，而是采用各种命令行环境之语言编写。本工具主体仅用于（多种）命令行环境。当须将一个 npm 研发项目之代码库上推至多个【集得】源时，本工具可提供些许便利。",
   "main": "./源代码/index.js",
   "scripts": {
     "test": "node  .",
     "start": "node  ."
   },
   "keywords": [
+    "集得",
+    "git",
+    "上推",
+    "push",
     "命令行",
     "command-line",
     "cli",
     "shell",
-    "集德",
-    "git",
-    "上推",
-    "push",
     "power-shell",
     "powershell",
     "bash"

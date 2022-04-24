@@ -1,5 +1,5 @@
 
-# 吴乐川的【集德】（Git）上推（Push）辅助命令行工具
+# 吴乐川的【集得】（Git）上推（Push）辅助命令行工具
 
 > 中国人——特别是汉族人，理应坚持广泛、规范地使用汉语。凡非必要之情形不说外国话、不用外国字。此乃天经地义！然则每当必要，亦不排斥采用外国之语言。不妨 **博世界之学问，养中国之精神** 。
 >
@@ -38,13 +38,13 @@ Nothing yet.
 
 ## 简介
 
-吴乐川的【集德（ Git ）】上推（外国话是 push ）辅助命令行工具。
+吴乐川的【集得（ Git ）】上推（外国话是 push ）辅助命令行工具。
 
 - 本工具之主体并非采用 JavaScript 语言族编写，而是采用各种命令行环境之语言编写。
 
 - 本工具主体仅用于（多种）命令行环境。
 
-- 当须将一个 npm 研发项目之代码库上推至多个【集德】源时，本工具可提供些许便利。
+- 当须将一个 npm 研发项目之代码库上推至多个【集得】源时，本工具可提供些许便利。
 
 
 ## 用法
@@ -54,27 +54,27 @@ Nothing yet.
 #### PowerShell 环境中的用法示例 1
 
 ```powershell
-.  '.\node_modules\@wulechuan\cli-scripts--git-push\源代码\PowerShell\Push-集德上推至单一源.ps1'
+.  '.\node_modules\@wulechuan\cli-scripts--git-push\源代码\PowerShell\Push-集得上推至单一源.ps1'
 
-Push-集德上推至单一源  '吴乐川：码云'  -集德源之显示名称文本采用的颜色 'Red'
+Push-集得上推至单一源  '吴乐川：码云'  -集得源之显示名称文本采用的颜色 'Red'
 ```
 
 
 #### PowerShell 环境中的用法示例 2
 
 ```powershell
-.  '.\node_modules\@wulechuan\cli-scripts--git-push\源代码\PowerShell\Push-集德上推至单一源.ps1'
+.  '.\node_modules\@wulechuan\cli-scripts--git-push\源代码\PowerShell\Push-集得上推至单一源.ps1'
 
 Write-Host
-Write-Host  -F 'Black'  -B 'DarkGreen'  ' 【集德】上推（ git push ）至所有源：开始 '
+Write-Host  -F 'Black'  -B 'DarkGreen'  ' 【集得】上推（ git push ）至所有源：开始 '
 Write-Host
 
-Push-集德上推至单一源  '吴乐川：阿里云'  -集德源之显示名称文本采用的颜色 'Green'
-Push-集德上推至单一源  '吴乐川：码云'    -集德源之显示名称文本采用的颜色 'Red'
-Push-集德上推至单一源  '吴乐川：GitHub'  -集德源之显示名称文本采用的颜色 'Yellow'
+Push-集得上推至单一源  '吴乐川：阿里云'  -集得源之显示名称文本采用的颜色 'Green'
+Push-集得上推至单一源  '吴乐川：码云'    -集得源之显示名称文本采用的颜色 'Red'
+Push-集得上推至单一源  '吴乐川：GitHub'  -集得源之显示名称文本采用的颜色 'Yellow'
 
 Write-Host
-Write-Host  -F 'Black'  -B 'DarkGreen'  ' 【集德】上推（ git push ）至所有源：结束 '
+Write-Host  -F 'Black'  -B 'DarkGreen'  ' 【集得】上推（ git push ）至所有源：结束 '
 Write-Host
 ```
 
@@ -83,10 +83,10 @@ Write-Host
 #### 类 Bash 环境中的用法示例 1
 
 ```bash
-.  './node_modules/@wulechuan/cli-scripts--git-push/源代码/bash/吴乐川-集德上推至单一源.sh'
+.  './node_modules/@wulechuan/cli-scripts--git-push/源代码/bash/吴乐川-集得上推至单一源.sh'
 
 
-吴乐川-集德上推至单一源  --should-skip=false \
+吴乐川-集得上推至单一源  --should-skip=false \
     --git-origin-name='吴乐川：码云' \
     --git-origin-display-name='吴乐川：码云' \
     --git-origin-display-name-color='red'
@@ -95,30 +95,30 @@ Write-Host
 #### 类 Bash 环境中的用法示例 2
 
 ```bash
-.  './node_modules/@wulechuan/cli-scripts--git-push/源代码/bash/吴乐川-集德上推至单一源.sh'
+.  './node_modules/@wulechuan/cli-scripts--git-push/源代码/bash/吴乐川-集得上推至单一源.sh'
 
 
 echo
-echo -e "\e[42;30m 【集德】上推（ git push ）至所有源：开始 \e[0;0m"
+echo -e "\e[42;30m 【集得】上推（ git push ）至所有源：开始 \e[0;0m"
 # echo
 
-吴乐川-集德上推至单一源  --should-skip=false \
+吴乐川-集得上推至单一源  --should-skip=false \
     --git-origin-name='吴乐川：码云' \
     --git-origin-display-name='吴乐川：码云' \
     --git-origin-display-name-color='red'
 
-吴乐川-集德上推至单一源  --should-skip=false \
+吴乐川-集得上推至单一源  --should-skip=false \
     --git-origin-name='吴乐川：阿里云' \
     --git-origin-display-name='吴乐川：阿里云' \
     --git-origin-display-name-color='green'
 
-吴乐川-集德上推至单一源  --should-skip=false \
+吴乐川-集得上推至单一源  --should-skip=false \
     --git-origin-name='吴乐川：GitHub' \
     --git-origin-display-name='吴乐川：GitHub' \
     --git-origin-display-name-color='yellow'
 
 echo
-echo -e "\e[42;30m 【集德】上推（ git push ）至所有源：结束 \e[0;0m"
+echo -e "\e[42;30m 【集得】上推（ git push ）至所有源：结束 \e[0;0m"
 echo
 ```
 
