@@ -1,4 +1,6 @@
-.  ".\源代码\PowerShell\Push-集得上推至单一源.ps1"
+# 本文件之文件名冠以英语句点“.”，是为了在 Shell 或 Git Bash 环境下，令本文件不可见。
+
+.  '.\源代码\PowerShell\Push-集得上推至单一源.ps1'
 
 Write-Host
 Write-Host  -F 'Black'  -B 'DarkGreen'  ' 【集得】上推（ git push ）至所有源：开始 '
