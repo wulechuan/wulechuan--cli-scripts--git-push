@@ -10,6 +10,14 @@
     "start": "npm  test",
     "每当制作集得之版本之前": "npm  i    &&    npm  test"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wulechuan/wulechuan--cli-scripts--git-push.git"
+  },
+  "bugs": {
+    "url": "https://github.com/wulechuan/wulechuan--cli-scripts--git-push/issues"
+  },
+  "homepage": "https://github.com/wulechuan/wulechuan--cli-scripts--git-push#readme",
   "keywords": [
     "集得",
     "批处理",
@@ -26,13 +34,5 @@
     "power-shell",
     "powershell",
     "bash"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/wulechuan/wulechuan--cli-scripts--git-push.git"
-  },
-  "bugs": {
-    "url": "https://github.com/wulechuan/wulechuan--cli-scripts--git-push/issues"
-  },
-  "homepage": "https://github.com/wulechuan/wulechuan--cli-scripts--git-push#readme"
+  ]
 }
