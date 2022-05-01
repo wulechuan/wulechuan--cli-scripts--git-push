@@ -18,13 +18,13 @@ function 吴乐川-集得上推至单一源 {
 
 
     if $shouldDebug; then echo -e "DEBUG: - - - - - - - - - - - - - - - - - - - - - - - -"; fi
-    if $shouldDebug; then echo -e "DEBUG: \$1=\"\e[33m$1\e[0m\""; fi
+    if $shouldDebug; then echo -e "DEBUG: \$1=\"\e[33m$1\e[0;0m\""; fi
     if [[ "$1" =~ ^--should-skip=.+ ]]; then
         shouldSkip="${1:14}"
         shift
     fi
 
-    if $shouldDebug; then echo -e "DEBUG: \$1=\"\e[33m$1\e[0m\""; fi
+    if $shouldDebug; then echo -e "DEBUG: \$1=\"\e[33m$1\e[0;0m\""; fi
     if [[ "$1" =~ ^--git-origin-name=.+ ]]; then
         gitOriginName="${1:18}"
         gitOriginDisplayName="$gitOriginName"
@@ -32,17 +32,17 @@ function 吴乐川-集得上推至单一源 {
     fi
 
     if [ -z "$gitOriginName" ]; then
-        echo -e "\e[31m吴乐川-集得上推至单一源 函数的参数错误\e[0m：\e[33m--git-origin-name\e[0m 未给出有效的值。"
+        echo -e "\e[31m吴乐川-集得上推至单一源 函数的参数错误\e[0;0m：\e[33m--git-origin-name\e[0;0m 未给出有效的值。"
         return 1
     fi
 
-    if $shouldDebug; then echo -e "DEBUG: \$1=\"\e[33m$1\e[0m\""; fi
+    if $shouldDebug; then echo -e "DEBUG: \$1=\"\e[33m$1\e[0;0m\""; fi
     if [[ "$1" =~ ^--git-origin-display-name=.+ ]]; then
         gitOriginDisplayName="${1:26}"
         shift
     fi
 
-    if $shouldDebug; then echo -e "DEBUG: \$1=\"\e[33m$1\e[0m\""; fi
+    if $shouldDebug; then echo -e "DEBUG: \$1=\"\e[33m$1\e[0;0m\""; fi
     if [[ "$1" =~ ^--git-origin-display-name-color=.+ ]]; then
         gitOriginDisplayNameColor="${1:32}"
         shift
@@ -82,11 +82,11 @@ function 吴乐川-集得上推至单一源 {
 
 
     if $shouldDebug; then
-        echo -e "DEBUG: shouldSkip=\"\e[32m${shouldSkip}\e[0m\""
-        echo -e "DEBUG: gitOriginName=\"\e[32m${gitOriginName}\e[0m\""
-        echo -e "DEBUG: gitOriginDisplayName=\"\e[32m${gitOriginDisplayName}\e[0m\""
-        echo -e "DEBUG: gitOriginDisplayNameColor=\"\e[32m${gitOriginDisplayNameColor}\e[0m\""
-        echo -e "DEBUG: gitOriginDisplayNameColorCode=\"\e[32m${gitOriginDisplayNameColorCode}\e[0m\""
+        echo -e "DEBUG: shouldSkip=\"\e[32m${shouldSkip}\e[0;0m\""
+        echo -e "DEBUG: gitOriginName=\"\e[32m${gitOriginName}\e[0;0m\""
+        echo -e "DEBUG: gitOriginDisplayName=\"\e[32m${gitOriginDisplayName}\e[0;0m\""
+        echo -e "DEBUG: gitOriginDisplayNameColor=\"\e[32m${gitOriginDisplayNameColor}\e[0;0m\""
+        echo -e "DEBUG: gitOriginDisplayNameColorCode=\"\e[32m${gitOriginDisplayNameColorCode}\e[0;0m\""
         echo -e "DEBUG: - - - - - - - - - - - - - - - - - - - - - - - -"
     fi
 
@@ -94,10 +94,10 @@ function 吴乐川-集得上推至单一源 {
 
     if [ "$shouldSkip" != true ] && [ "$shouldSkip" != 'yes' ] && [ "$shouldSkip" != 'y' ]; then
         echo
-        echo -e "${__VE_line_05} \e[${gitOriginDisplayNameColorCode}m${gitOriginDisplayName}\e[0m ${__VE_line_20}${__VE_line_20}${__VE_line_20}"
+        echo -e "${__VE_line_05} \e[${gitOriginDisplayNameColorCode}m${gitOriginDisplayName}\e[0;0m ${__VE_line_20}${__VE_line_20}${__VE_line_20}"
         echo
 
-        echo -e "git  push  \e[${gitOriginDisplayNameColorCode}m${gitOriginName}\e[0m"
+        echo -e "git  push  \e[${gitOriginDisplayNameColorCode}m${gitOriginName}\e[0;0m"
         echo
 
         git  push  $gitOriginName

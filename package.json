@@ -2,7 +2,7 @@
   "name": "@wulechuan/cli-scripts--git-push",
   "author": "吴乐川 <wulechuan@live.com>",
   "license": "WTFPL",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "此为吴乐川的《【集得（ Git ）】上推（外国话是 push ）辅助命令行工具》。本工具之主体并非采用 JavaScript 语言族编写，而是采用 2 种命令行环境之语言编写，即 PowerShell 语言和 Bash 语言。故本工具之主体仅用于（多种）命令行环境。当须将一个 npm 研发项目之代码库上推至多个【集得】源时，本工具可提供些许便利。",
   "main": "./源代码/index.js",
   "scripts": {
@@ -10,6 +10,7 @@
     "start": "npm  test",
     "每当制作集得之版本之前": "npm  i    &&    npm  test"
   },
+  "homepage": "https://github.com/wulechuan/wulechuan--cli-scripts--git-push#readme",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/wulechuan/wulechuan--cli-scripts--git-push.git"
@@ -17,7 +18,6 @@
   "bugs": {
     "url": "https://github.com/wulechuan/wulechuan--cli-scripts--git-push/issues"
   },
-  "homepage": "https://github.com/wulechuan/wulechuan--cli-scripts--git-push#readme",
   "keywords": [
     "集得",
     "批处理",
