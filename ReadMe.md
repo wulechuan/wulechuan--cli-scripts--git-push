@@ -41,7 +41,7 @@
 
 
 
-## 用法
+## 安装与使用
 
 ### 安装
 
@@ -75,13 +75,13 @@
     npm  i  -D  @wulechuan/cli-scripts--git-push
     ```
 
-### 运行
+### 使用
 
 #### 在 PowerShell 环境中运行本工具
 
 ##### PowerShell 环境中的用法示例 1
 
-```powershell
+```ps1
 .  '.\node_modules\@wulechuan\cli-scripts--git-push\源代码\PowerShell\Push-集得上推至单一源.ps1'
 
 Push-集得上推至单一源  '吴乐川：码云'  -集得源之显示名称文本采用的颜色 'Red'
@@ -90,20 +90,16 @@ Push-集得上推至单一源  '吴乐川：码云'  -集得源之显示名称�
 
 ##### PowerShell 环境中的用法示例 2
 
-```powershell
+```ps1
 .  '.\node_modules\@wulechuan\cli-scripts--git-push\源代码\PowerShell\Push-集得上推至单一源.ps1'
 
-Write-Host
-Write-Host  -F 'Black'  -B 'DarkGreen'  ' 【集得】上推（ git push ）至所有源：开始 '
-Write-Host
+Write-集得上推至一个或多个源_开始之提示语
 
-Push-集得上推至单一源  '吴乐川：阿里云'  -集得源之显示名称文本采用的颜色 'Green'
 Push-集得上推至单一源  '吴乐川：码云'    -集得源之显示名称文本采用的颜色 'Red'
+Push-集得上推至单一源  '吴乐川：阿里云'  -集得源之显示名称文本采用的颜色 'Blue'
 Push-集得上推至单一源  '吴乐川：GitHub'  -集得源之显示名称文本采用的颜色 'Yellow'
 
-Write-Host
-Write-Host  -F 'Black'  -B 'DarkGreen'  ' 【集得】上推（ git push ）至所有源：结束 '
-Write-Host
+Write-集得上推至一个或多个源_结束之提示语
 ```
 
 #### 在【类 Bash】环境中运行本工具
@@ -125,10 +121,7 @@ Write-Host
 ```bash
 .  './node_modules/@wulechuan/cli-scripts--git-push/源代码/bash/吴乐川-集得上推至单一源.sh'
 
-
-echo
-echo -e "\e[42;30m 【集得】上推（ git push ）至所有源：开始 \e[0;0m"
-# echo
+吴乐川-集得上推至一个或多个源-开始之提示语
 
 吴乐川-集得上推至单一源  --should-skip=false \
     --git-origin-name='吴乐川：码云' \
@@ -138,17 +131,25 @@ echo -e "\e[42;30m 【集得】上推（ git push ）至所有源：开始 \e[0;
 吴乐川-集得上推至单一源  --should-skip=false \
     --git-origin-name='吴乐川：阿里云' \
     --git-origin-display-name='吴乐川：阿里云' \
-    --git-origin-display-name-color='green'
+    --git-origin-display-name-color='blue'
 
 吴乐川-集得上推至单一源  --should-skip=false \
     --git-origin-name='吴乐川：GitHub' \
     --git-origin-display-name='吴乐川：GitHub' \
     --git-origin-display-name-color='yellow'
 
-echo
-echo -e "\e[42;30m 【集得】上推（ git push ）至所有源：结束 \e[0;0m"
-echo
+吴乐川-集得上推至一个或多个源-结束之提示语
 ```
+
+
+## 重要版本说明
+
+- 2022 年 5 月 12 日，`v2.1.0`版。
+
+    - 提升了容错性。
+    - PowerShell 版的代码可自动计算标题行中尾部分割线的长度。
+    - 添加了打印**起始**提示语的函数。
+    - 添加了打印**结束**提示语的函数。
 
 
 

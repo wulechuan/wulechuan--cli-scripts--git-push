@@ -107,3 +107,23 @@ function 吴乐川-集得上推至单一源 {
         echo
     fi
 }
+
+
+
+
+
+function 吴乐川-集得上推至一个或多个源-开始之提示语 {
+    echo
+    echo -e "\e[42;30m 【集得】上推（ git push ）至所有源：开始  \e[0;0m"
+    # echo
+}
+
+
+
+
+
+function 吴乐川-集得上推至一个或多个源-结束之提示语 {
+    echo
+    echo -e "\e[42;30m 【集得】上推（ git push ）至所有源：结束  \e[0;0m"
+    echo
+}
