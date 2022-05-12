@@ -13,8 +13,8 @@ console.log(`\nnpm 包： ${
     单层缩进含列表符号
 }PowerShell ：\n${
     单层缩进.repeat(2)
-}.\\应用示例\\PowerShell\\Push-将代码依次上推至多个集得源.ps1\n\n${
+}.\\.Push-将代码依次推送至多个集得源.ps1\n\n${
     单层缩进含列表符号
 }bash ：\n${
     单层缩进.repeat(2)
-}./应用示例/bash/集得-将代码库依次上推至多个源.sh`)
+}./push-将代码依次推送至多个集得源.sh`)
