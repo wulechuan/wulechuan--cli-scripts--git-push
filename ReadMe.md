@@ -51,7 +51,7 @@
 
 1.  虽然 Nodejs 往往会随附一个 npm 工具。但一来这并不一定（例如 Ubuntu 环境的 Nodejs 有可能并不附带 npm）；二来即便 Nodejs 附带了一份 npm，该 npm 之版本也未必最新的。故而，推荐安装最新版的 npm 。
 
-    以下方法假设 Nodejs 确实随附了一份 npm，并利用旧版的 npm 来安装新版的 npm 。
+    以下方法假设 Nodejs 确实随附了一份 npm，并利用该随附的、较旧版本的 npm 来安装最新版的 npm 。
 
     ```bash
     # Bash 或 PowerShell
@@ -81,36 +81,59 @@
 
 ##### PowerShell 环境中的用法示例 1
 
+该示例之功用：逐一添加 3 个集得源，并令过程在命令行窗口中较美观地呈现。
+
 ```ps1
-.  '.\node_modules\@wulechuan\cli-scripts--git-push\源代码\PowerShell\Push-集得上推至单一源.ps1'
+Import-Module  '.\node_modules\@wulechuan\cli-scripts--git-push\源代码\PowerShell\吴乐川-集得源管理工具集.psm1'
 
-Push-集得上推至单一源  '吴乐川：码云'  -集得源之显示名称文本采用的颜色 'Red'
+Add-吴乐川添加单个集得源  -集得源在本机采用的名称 '吴乐川：码云'  -特征颜色 'DarkRed' `
+    -集得源之完整地址 'git@gitee.com:nanchang-wulechuan/wulechuan--cli-scripts--git-push.git'
+
+Add-吴乐川添加单个集得源  -集得源在本机采用的名称 ' 吴乐川：阿里云'  -特征颜色 'Blue' `
+    -集得源之完整地址 'git@code.aliyun.com:wulechuan/wulechuan--cli-scripts--git-push.git'
+
+Add-吴乐川添加单个集得源  -集得源在本机采用的名称 '吴乐川：GitHub'  -特征颜色 'Yellow' `
+    -集得源之完整地址 'git@github.com:wulechuan/wulechuan--cli-scripts--git-push.git'
 ```
-
 
 ##### PowerShell 环境中的用法示例 2
 
+该示例之功用：将当前的文件仓库上推至某个集得源，并令过程在命令行窗口中较美观地呈现。
+
 ```ps1
-.  '.\node_modules\@wulechuan\cli-scripts--git-push\源代码\PowerShell\Push-集得上推至单一源.ps1'
+Import-Module  '.\node_modules\@wulechuan\cli-scripts--git-push\源代码\PowerShell\吴乐川-集得源管理工具集.psm1'
 
-Write-集得上推至一个或多个源_开始之提示语
+Push-吴乐川集得上推至单个源  '吴乐川：码云'  -集得源之显示名称文本采用的颜色 'Red'
+```
 
-Push-集得上推至单一源  '吴乐川：码云'    -集得源之显示名称文本采用的颜色 'Red'
-Push-集得上推至单一源  '吴乐川：阿里云'  -集得源之显示名称文本采用的颜色 'Blue'
-Push-集得上推至单一源  '吴乐川：GitHub'  -集得源之显示名称文本采用的颜色 'Yellow'
 
-Write-集得上推至一个或多个源_结束之提示语
+##### PowerShell 环境中的用法示例 3
+
+该示例之功用：将当前的文件仓库依次上推至 3 个集得源，并令过程在命令行窗口中较美观地呈现。特别的，还故意呈现了开始和结束提示语。
+
+```ps1
+Import-Module  '.\node_modules\@wulechuan\cli-scripts--git-push\源代码\PowerShell\吴乐川-集得源管理工具集.psm1'
+
+Write-吴乐川显示_集得上推至一个或多个源_开始之提示语
+
+Push-吴乐川集得上推至单个源  '吴乐川：码云'    -集得源之显示名称文本采用的颜色 'Red'
+Push-吴乐川集得上推至单个源  '吴乐川：阿里云'  -集得源之显示名称文本采用的颜色 'Blue'
+Push-吴乐川集得上推至单个源  '吴乐川：GitHub'  -集得源之显示名称文本采用的颜色 'Yellow'
+
+Write-吴乐川显示_集得上推至一个或多个源_结束之提示语
+
 ```
 
 #### 在【类 Bash】环境中运行本工具
 
 ##### 【类 Bash】环境中的用法示例 1
 
+该示例之功用：将当前的文件仓库上推至某个集得源，并令过程在命令行窗口中较美观地呈现。
+
 ```bash
-.  './node_modules/@wulechuan/cli-scripts--git-push/源代码/bash/吴乐川-集得上推至单一源.sh'
+.  './node_modules/@wulechuan/cli-scripts--git-push/源代码/bash/吴乐川-集得源管理工具集.sh'
 
-
-吴乐川-集得上推至单一源  --should-skip=false \
+吴乐川-集得上推至单个源  --should-skip=false \
     --git-origin-name='吴乐川：码云' \
     --git-origin-display-name='吴乐川：码云' \
     --git-origin-display-name-color='red'
@@ -118,38 +141,47 @@ Write-集得上推至一个或多个源_结束之提示语
 
 ##### 【类 Bash】环境中的用法示例 2
 
+该示例之功用：将当前的文件仓库依次上推至 3 个集得源，并令过程在命令行窗口中较美观地呈现。特别的，还故意呈现了开始和结束提示语。
+
 ```bash
-.  './node_modules/@wulechuan/cli-scripts--git-push/源代码/bash/吴乐川-集得上推至单一源.sh'
+.  './node_modules/@wulechuan/cli-scripts--git-push/源代码/bash/吴乐川-集得源管理工具集.sh'
 
-吴乐川-集得上推至一个或多个源-开始之提示语
+吴乐川-集得上推至一个或多个源-显示开始之提示语
 
-吴乐川-集得上推至单一源  --should-skip=false \
+吴乐川-集得上推至单个源  --should-skip=false \
     --git-origin-name='吴乐川：码云' \
     --git-origin-display-name='吴乐川：码云' \
     --git-origin-display-name-color='red'
 
-吴乐川-集得上推至单一源  --should-skip=false \
+吴乐川-集得上推至单个源  --should-skip=false \
     --git-origin-name='吴乐川：阿里云' \
     --git-origin-display-name='吴乐川：阿里云' \
     --git-origin-display-name-color='blue'
 
-吴乐川-集得上推至单一源  --should-skip=false \
+吴乐川-集得上推至单个源  --should-skip=false \
     --git-origin-name='吴乐川：GitHub' \
     --git-origin-display-name='吴乐川：GitHub' \
     --git-origin-display-name-color='yellow'
 
-吴乐川-集得上推至一个或多个源-结束之提示语
+吴乐川-集得上推至一个或多个源-显示结束之提示语
 ```
 
 
 ## 重要版本说明
 
-- 2022 年 5 月 12 日，`v2.1.0`版。
+- 2022 年 5 月 12 日凌晨，`v2.1.0`版。
 
     - 提升了容错性。
     - PowerShell 版的代码可自动计算标题行中尾部分割线的长度。
     - 添加了打印**起始**提示语的函数。
     - 添加了打印**结束**提示语的函数。
+
+
+- 2022 年 5 月 12 日下午，`v3.0.0`版。接口文件、接口函数均有变动（更名），故不得不提升主版本号至 `3` 。
+
+    - 源代码文件更名。
+    - 接口函数几乎全部更名。
+    - PowerShell 版的代码添加了 `Add-吴乐川添加单个集得源` 函数。
 
 
 

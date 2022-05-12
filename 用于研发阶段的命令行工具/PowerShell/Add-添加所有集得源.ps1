@@ -1,31 +1,20 @@
 #
 
-Import-Module '.\源代码\PowerShell\吴乐川-文本显示工具.psm1'
-
-$装饰线符合 = '═'
-
-
+if ("$PWD" -match "\\用于研发阶段的命令行工具\\PowerShell`$") {
+    Set-Location '..\..\'
+}
 
 
 
-Write-吴乐川显示一行带装饰线的文字  -中央文本 '添加【集得】源： 吴乐川：码云' `
-    -中央文本之文字颜色 'DarkRed'  -装饰线之文字颜色 'DarkRed'  -中央文本左侧之装饰线长度折合英语字母数 5  -表达装饰线纹样单元的文本 $装饰线符合
-
-git  remote  add  '吴乐川：码云'  'git@gitee.com:nanchang-wulechuan/wulechuan--cli-scripts--git-push.git'
-Write-Host
+Import-Module '.\源代码\PowerShell\吴乐川-集得源管理工具集.psm1'
 
 
 
-Write-吴乐川显示一行带装饰线的文字  -中央文本 '添加【集得】源： 吴乐川：阿里云' `
-    -中央文本之文字颜色 'Blue'  -装饰线之文字颜色 'Blue'  -中央文本左侧之装饰线长度折合英语字母数 5  -表达装饰线纹样单元的文本 $装饰线符合
+Add-吴乐川添加单个集得源  -集得源在本机采用的名称 '吴乐川：码云'  -特征颜色 'DarkRed' `
+    -集得源之完整地址 'git@gitee.com:nanchang-wulechuan/wulechuan--cli-scripts--git-push.git'
 
-git  remote  add  '吴乐川：阿里云'  'git@code.aliyun.com:wulechuan/wulechuan--cli-scripts--git-push.git'
-Write-Host
+Add-吴乐川添加单个集得源  -集得源在本机采用的名称 ' 吴乐川：阿里云'  -特征颜色 'Blue' `
+    -集得源之完整地址 'git@code.aliyun.com:wulechuan/wulechuan--cli-scripts--git-push.git'
 
-
-
-Write-吴乐川显示一行带装饰线的文字  -中央文本 '添加【集得】源： 吴乐川：GitHub' `
-    -中央文本之文字颜色 'Yellow'  -装饰线之文字颜色 'Yellow'  -中央文本左侧之装饰线长度折合英语字母数 5  -表达装饰线纹样单元的文本 $装饰线符合
-
-git  remote  add  '吴乐川：GitHub'  'git@github.com:wulechuan/wulechuan--cli-scripts--git-push.git'
-Write-Host
+Add-吴乐川添加单个集得源  -集得源在本机采用的名称 '吴乐川：GitHub'  -特征颜色 'Yellow' `
+    -集得源之完整地址 'git@github.com:wulechuan/wulechuan--cli-scripts--git-push.git'
