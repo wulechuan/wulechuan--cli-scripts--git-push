@@ -89,3 +89,9 @@ function Get-吴乐川求一行文本视觉宽度等效英语字母数 {
         $视觉宽度等效英语字符数
     }
 }
+
+
+
+
+
+Export-ModuleMember -Function *
