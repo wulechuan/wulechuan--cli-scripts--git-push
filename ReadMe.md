@@ -89,10 +89,10 @@ Import-Module  "${吴乐川的模块的路径}\吴乐川-文本处理工具.psm1
 Import-Module  "${吴乐川的模块的路径}\吴乐川-文本显示工具.psm1"
 Import-Module  "${吴乐川的模块的路径}\吴乐川-集得源管理工具集.psm1"
 
-Add-吴乐川添加单个集得源  -集得源在本机采用的名称 '吴乐川：码云'  -特征颜色 'DarkRed' `
+Add-吴乐川添加单个集得源  -集得源在本机采用的名称 '吴乐川：码云'   -特征颜色 'DarkRed' `
     -集得源之完整地址 'git@gitee.com:nanchang-wulechuan/wulechuan--cli-scripts--git-push.git'
 
-Add-吴乐川添加单个集得源  -集得源在本机采用的名称 ' 吴乐川：阿里云'  -特征颜色 'Blue' `
+Add-吴乐川添加单个集得源  -集得源在本机采用的名称 '吴乐川：阿里云'  -特征颜色 'Blue' `
     -集得源之完整地址 'git@code.aliyun.com:wulechuan/wulechuan--cli-scripts--git-push.git'
 
 Add-吴乐川添加单个集得源  -集得源在本机采用的名称 '吴乐川：GitHub'  -特征颜色 'Yellow' `
@@ -125,7 +125,7 @@ Import-Module  "${吴乐川的模块的路径}\吴乐川-集得源管理工具�
 
 Write-吴乐川显示_集得上推至一个或多个源_开始之提示语
 
-Push-吴乐川集得上推至单个源  '吴乐川：码云'    -集得源之显示名称文本采用的颜色 'Red'
+Push-吴乐川集得上推至单个源  '吴乐川：码云'   -集得源之显示名称文本采用的颜色 'Red'
 Push-吴乐川集得上推至单个源  '吴乐川：阿里云'  -集得源之显示名称文本采用的颜色 'Blue'
 Push-吴乐川集得上推至单个源  '吴乐川：GitHub'  -集得源之显示名称文本采用的颜色 'Yellow'
 
