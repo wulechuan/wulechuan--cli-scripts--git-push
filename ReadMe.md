@@ -84,9 +84,10 @@
 该示例之功用：逐一添加 3 个集得源，并令过程在命令行窗口中较美观地呈现。
 
 ```ps1
-Import-Module  '.\node_modules\@wulechuan\cli-scripts--git-push\源代码\PowerShell\吴乐川-文本处理工具.psm1'
-Import-Module  '.\node_modules\@wulechuan\cli-scripts--git-push\源代码\PowerShell\吴乐川-文本显示工具.psm1'
-Import-Module  '.\node_modules\@wulechuan\cli-scripts--git-push\源代码\PowerShell\吴乐川-集得源管理工具集.psm1'
+$吴乐川的模块的路径 = '.\node_modules\@wulechuan\cli-scripts--git-push\源代码\PowerShell'
+Import-Module  "${吴乐川的模块的路径}\吴乐川-文本处理工具.psm1"
+Import-Module  "${吴乐川的模块的路径}\吴乐川-文本显示工具.psm1"
+Import-Module  "${吴乐川的模块的路径}\吴乐川-集得源管理工具集.psm1"
 
 Add-吴乐川添加单个集得源  -集得源在本机采用的名称 '吴乐川：码云'  -特征颜色 'DarkRed' `
     -集得源之完整地址 'git@gitee.com:nanchang-wulechuan/wulechuan--cli-scripts--git-push.git'
@@ -103,9 +104,10 @@ Add-吴乐川添加单个集得源  -集得源在本机采用的名称 '吴乐�
 该示例之功用：将当前的文件仓库上推至某个集得源，并令过程在命令行窗口中较美观地呈现。
 
 ```ps1
-Import-Module  '.\node_modules\@wulechuan\cli-scripts--git-push\源代码\PowerShell\吴乐川-文本处理工具.psm1'
-Import-Module  '.\node_modules\@wulechuan\cli-scripts--git-push\源代码\PowerShell\吴乐川-文本显示工具.psm1'
-Import-Module  '.\node_modules\@wulechuan\cli-scripts--git-push\源代码\PowerShell\吴乐川-集得源管理工具集.psm1'
+$吴乐川的模块的路径 = '.\node_modules\@wulechuan\cli-scripts--git-push\源代码\PowerShell'
+Import-Module  "${吴乐川的模块的路径}\吴乐川-文本处理工具.psm1"
+Import-Module  "${吴乐川的模块的路径}\吴乐川-文本显示工具.psm1"
+Import-Module  "${吴乐川的模块的路径}\吴乐川-集得源管理工具集.psm1"
 
 Push-吴乐川集得上推至单个源  '吴乐川：码云'  -集得源之显示名称文本采用的颜色 'Red'
 ```
@@ -116,9 +118,10 @@ Push-吴乐川集得上推至单个源  '吴乐川：码云'  -集得源之显�
 该示例之功用：将当前的文件仓库依次上推至 3 个集得源，并令过程在命令行窗口中较美观地呈现。特别的，还故意呈现了开始和结束提示语。
 
 ```ps1
-Import-Module  '.\node_modules\@wulechuan\cli-scripts--git-push\源代码\PowerShell\吴乐川-文本处理工具.psm1'
-Import-Module  '.\node_modules\@wulechuan\cli-scripts--git-push\源代码\PowerShell\吴乐川-文本显示工具.psm1'
-Import-Module  '.\node_modules\@wulechuan\cli-scripts--git-push\源代码\PowerShell\吴乐川-集得源管理工具集.psm1'
+$吴乐川的模块的路径 = '.\node_modules\@wulechuan\cli-scripts--git-push\源代码\PowerShell'
+Import-Module  "${吴乐川的模块的路径}\吴乐川-文本处理工具.psm1"
+Import-Module  "${吴乐川的模块的路径}\吴乐川-文本显示工具.psm1"
+Import-Module  "${吴乐川的模块的路径}\吴乐川-集得源管理工具集.psm1"
 
 Write-吴乐川显示_集得上推至一个或多个源_开始之提示语
 
