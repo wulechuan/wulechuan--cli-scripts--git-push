@@ -1,8 +1,17 @@
+/**
+ * 参阅： https://go.microsoft.com/fwlink/?LinkId=733558
+ */
+
 {
-    // See https://go.microsoft.com/fwlink/?LinkId=733558
-    // for the documentation about the tasks.json format
     "version": "2.0.0",
     "tasks": [
+        {
+            "label": "测试",
+            "type": "shell",
+            "command": "npm  test",
+            "group": "test",
+            "problemMatcher": []
+        },
         {
             "label": "每当制作集得之版本之前",
             "type": "shell",
@@ -11,18 +20,18 @@
             "problemMatcher": []
         },
         {
-            "label": "将代码依次推送至多个集得源（PowerShell）",
             "type": "shell",
-            "command": ".Push-将代码依次推送至多个集得源.ps1",
+            "command": "pwsh  -Command '.Push-将代码依次推送至多个集得源.ps1'",
             "group": "none",
-            "problemMatcher": []
+            "problemMatcher": [],
+            "label": "将代码依次推送至多个集得源（PowerShell）"
         },
-        // {
-        //     "label": "将代码依次推送至多个集得源（Bash）",
-        //     "type": "shell",
-        //     "command": "./push-将代码依次推送至多个集得源.sh",
-        //     "group": "none",
-        //     "problemMatcher": [],
-        // },
+        {
+            "type": "shell",
+            "command": "bash  -c 'source  ./push-将代码依次推送至多个集得源.sh'",
+            "group": "none",
+            "problemMatcher": [],
+            "label": "将代码依次推送至多个集得源（Bash）"
+        }
     ]
 }
