@@ -130,18 +130,19 @@ Promise.all([
     const 本工具集自身_packageJSON_之完整路径 = 路径工具.resolve(本工具集自身_packageJSON_相对于_nodejs_进程工作目录的路径)
     const 本工具集自身根文件夹之完整路径 = 路径工具.dirname(本工具集自身_packageJSON_之完整路径)
 
-    const 路径甲 = 路径工具.resolve(路径工具.join('..'))
-    const 路径乙 = 路径工具.resolve(路径工具.join('..', '..'))
-    const 路径丙 = 路径工具.resolve(路径工具.join('..', '..', '..'))
-    console.log(`\n\n\n @wulechuan/cli-scripts--git-push 路径甲 "${路径甲}"\n\n\n`)
-    console.log(`\n\n\n @wulechuan/cli-scripts--git-push 路径乙 "${路径乙}"\n\n\n`)
-    console.log(`\n\n\n @wulechuan/cli-scripts--git-push 路径丙 "${路径丙}"\n\n\n`)
+    // const 路径甲 = 路径工具.resolve(路径工具.join('..'))
+    // const 路径乙 = 路径工具.resolve(路径工具.join('..', '..'))
+    // const 路径丙 = 路径工具.resolve(路径工具.join('..', '..', '..'))
+    // console.log(`\n\n\n @wulechuan/cli-scripts--git-push 路径甲 "${路径甲}"\n\n\n`)
+    // console.log(`\n\n\n @wulechuan/cli-scripts--git-push 路径乙 "${路径乙}"\n\n\n`)
+    // console.log(`\n\n\n @wulechuan/cli-scripts--git-push 路径丙 "${路径丙}"\n\n\n`)
 
     const 视作须为其安装本工具集的_npm_项目的根文件的完整路径 = 路径工具.resolve(路径工具.join(
         '..', // @wulechuan
         '..', // node_modules
         '..' // 本工具集向其提供服务的 npm 包
     ))
+    console.log('\n\n\n @wulechuan/cli-scripts--git-push 本工具集自身根文件夹之完整路径', 本工具集自身根文件夹之完整路径, '\n\n\n')
     console.log('\n\n\n @wulechuan/cli-scripts--git-push 视作须为其安装本工具集的_npm_项目的根文件的完整路径', 视作须为其安装本工具集的_npm_项目的根文件的完整路径, '\n\n\n')
     console.log('\n\n\n @wulechuan/cli-scripts--git-push__dirname', __dirname, '\n\n\n')
 
