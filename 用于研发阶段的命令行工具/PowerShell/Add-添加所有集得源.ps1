@@ -4,6 +4,8 @@ if ("$PWD" -match "\\用于研发阶段的命令行工具\\PowerShell`$") {
     Set-Location '..\..\'
 }
 
+Write-Host $PWD
+
 
 
 $吴乐川的模块的路径 = '.\源代码\PowerShell'

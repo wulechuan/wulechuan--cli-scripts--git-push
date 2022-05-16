@@ -12,7 +12,7 @@
 
 
 /**
- * @typedef {import('../../package.json')} 范_npm_packageJSON
+ * @typedef {import('../../package.json')} 范_本工具集自身的_packageJSON
  */
 
 /**
@@ -28,15 +28,15 @@
  */
 
 /**
- * @typedef {import('./功能集/功能之在命令行终端呈现本工具集之简介')} 范_在命令行终端呈现本工具集之简介
+ * @typedef {import('./功能集/1-在命令行终端呈现本工具集之简介')} 范_在命令行终端呈现本工具集之简介
  */
 
 
 
 
 
-// 而不是相对于本 js 文件的路径！
-const packageJSON的相对于进程工作目录的路径 = './package.json'
+// 注意，下方路径并不是相对于本 js 文件的路径！
+const 本工具集自身_packageJSON_相对于_nodejs_进程工作目录的路径 = './package.json'
 
 
 
@@ -46,7 +46,7 @@ Promise.all([
     import('chalk'),
     import('node:path'),
     import('fs-extra'),
-    import('./功能集/功能之在命令行终端呈现本工具集之简介.js'),
+    import('./功能集/1-在命令行终端呈现本工具集之简介.js'),
 ]).then(([
     粉笔工具_模块,
     路径工具_模块,
@@ -77,26 +77,27 @@ Promise.all([
     文件系统工具之扩展版,
     在命令行终端呈现本工具集之简介,
 }) => {
-    const 容纳_packageJSON_文件的文件夹之完整路径 = 路径工具.resolve(
-        路径工具.dirname(packageJSON的相对于进程工作目录的路径)
-    )
+    const 本工具集自身_packageJSON_之完整路径 = 路径工具.resolve(本工具集自身_packageJSON_相对于_nodejs_进程工作目录的路径)
+
+
 
     return Promise.all([
-        // 下方套一层 then 来传递 packageJSON ，唯一的目的是给 jsdocs 机会定义 packageJSON 的【范】（亦称所谓“类型”）。
-        文件系统工具之扩展版.readJSON(packageJSON的相对于进程工作目录的路径).then((
-            /** @type {范_npm_packageJSON} */
-            packageJSON
-        ) => packageJSON),
+        // 下方套一层 then 来传递 `本工具集自身的_packageJSON` ，唯一的目的是给 jsdocs 机会定义 `本工具集自身的_packageJSON` 的【范】（亦称所谓“类型”）。
+        文件系统工具之扩展版.readJSON(本工具集自身_packageJSON_之完整路径).then(
+            (/** @type {范_本工具集自身的_packageJSON} */ 本工具集自身的_packageJSON) => 本工具集自身的_packageJSON
+        ),
     ]).then(([
-        packageJSON,
+        本工具集自身的_packageJSON,
     ]) => {
+        const 本工具集一切命令行消息之前缀 = `${粉笔工具.whiteBright(本工具集自身的_packageJSON.name)}：`
+
         return {
             粉笔工具,
             路径工具,
             文件系统工具之扩展版,
 
-            packageJSON,
-            容纳_packageJSON_文件的文件夹之完整路径,
+            本工具集一切命令行消息之前缀,
+            本工具集自身的_packageJSON,
 
             在命令行终端呈现本工具集之简介,
         }
@@ -106,15 +107,14 @@ Promise.all([
     路径工具,
     文件系统工具之扩展版,
 
-    packageJSON,
-    容纳_packageJSON_文件的文件夹之完整路径,
+    本工具集一切命令行消息之前缀,
+    本工具集自身的_packageJSON,
 
     在命令行终端呈现本工具集之简介,
 }) => {
-    return Promise.all([
-        在命令行终端呈现本工具集之简介({
-            packageJSON,
-            粉笔工具,
-        }),
-    ])
+    在命令行终端呈现本工具集之简介({
+        粉笔工具,
+        本工具集一切命令行消息之前缀,
+        本工具集自身的_packageJSON,
+    })
 })

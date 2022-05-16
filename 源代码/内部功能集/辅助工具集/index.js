@@ -28,34 +28,30 @@ function 求当前时间之文本_可用于文件系统之文件名 () {
  * @returns {{ 已有改动: boolean; 新实体: any }}
  */
 function 将JSON中单个属性或成员配置为新值 (旧有实体, 拟配置为该实体) {
-    let 已有改动 = false
-
     if (typeof 拟配置为该实体 === 'function') {
         throw new TypeError('tasks.json 中怎么还有函数？')
     }
 
     if (typeof 拟配置为该实体 !== 'object') {
-        if (旧有实体 !== 拟配置为该实体) {
-            已有改动 = true
-        }
-
         return {
-            已有改动,
+            已有改动: 旧有实体 !== 拟配置为该实体,
             新实体: 拟配置为该实体,
         }
     }
 
     if (!拟配置为该实体) { // typeof null === 'object'
-        // throw new TypeError('tasks.json 中怎么还有 null ？')
+        if (旧有实体 === null || 旧有实体 === undefined) {
+            // throw new TypeError('tasks.json 中怎么还有 null ？')
 
-        if (旧有实体) {
             return {
                 已有改动: false,
                 新实体: 旧有实体,
             }
         } else {
+            // throw new TypeError('tasks.json 中怎么还有 null ？')
+
             return {
-                已有改动: 旧有实体 !== null,
+                已有改动: true,
                 新实体: null,
             }
         }
