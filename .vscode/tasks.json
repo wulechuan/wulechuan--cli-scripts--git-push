@@ -26,12 +26,12 @@
             "problemMatcher": [],
             "label": "将代码依次推送至多个集得源（PowerShell）"
         },
-        {
-            "type": "shell",
-            "command": "bash  -c 'source  ./push-将代码依次推送至多个集得源.sh'",
-            "group": "none",
-            "problemMatcher": [],
-            "label": "将代码依次推送至多个集得源（Bash）"
-        }
+        // {
+        //     "type": "shell",
+        //     "command": "bash  -c 'source  ./push-将代码依次推送至多个集得源.sh'",
+        //     "group": "none",
+        //     "problemMatcher": [],
+        //     "label": "将代码依次推送至多个集得源（Bash）"
+        // }
     ]
 }
