@@ -12,7 +12,7 @@ source  './node_modules/@wulechuan/cli-scripts--git-push/源代码/发布的源�
 # 吴乐川-集得上推至单个源  --should-skip=false \
 #     --git-origin-name='集得源乙之名称' \
 #     --git-origin-display-name='集得源乙之易读名称（该项可省略）' \
-#     --git-origin-display-name-color='green'
+#     --git-origin-display-name-color='blue'
 
 # 吴乐川-集得上推至单个源  --should-skip=false \
 #     --git-origin-name='集得源丙之名称' \
