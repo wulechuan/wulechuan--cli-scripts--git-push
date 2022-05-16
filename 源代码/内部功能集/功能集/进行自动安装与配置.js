@@ -1,5 +1,5 @@
 /**
- * @typedef {import('../../package.json')} 范_npm_packageJSON
+ * @typedef {import('../../../package.json')} 范_npm_packageJSON
  */
 
 /**
@@ -19,11 +19,11 @@
  */
 
 /**
- * @typedef {import('../../源代码/内部功能集/功能集/一切自动安装与配置任务的主体功能.js')} 范_本工具集一切自动安装与配置任务之内部总接口
+ * @typedef {import('./一切自动安装与配置任务的主体功能.js')} 范_本工具集一切自动安装与配置任务之内部总接口
  */
 
 /**
- * @typedef {import('../../源代码/内部功能集/辅助工具集')} 范_本工具集随附之辅助工具集
+ * @typedef {import('../辅助工具集')} 范_本工具集随附之辅助工具集
  */
 
 
@@ -42,8 +42,8 @@ Promise.all([
     import('node:path'),
     import('fs-extra'),
     import('jsonc-parser'),
-    import('../../源代码/内部功能集/功能集/一切自动安装与配置任务的主体功能.js'),
-    import('../../源代码/内部功能集/辅助工具集/index.js'),
+    import('./一切自动安装与配置任务的主体功能.js'),
+    import('../辅助工具集/index.js'),
 ]).then(([
     粉笔工具_模块,
     路径工具_模块,
