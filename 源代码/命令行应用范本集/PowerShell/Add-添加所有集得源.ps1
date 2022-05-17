@@ -3,7 +3,8 @@
 Write-Host $PWD
 
 if ("$PWD" -match "\\用于研发阶段的命令行工具\\PowerShell`$") {
-    Set-Location '..\..\' # 确保进程的当前路径为接受本工具集服务的 npm 包的根文件夹。
+    $执行本命令前的工作路径 = "$PWD"
+    Set-Location '..\..\'
     Write-Host $PWD
 }
 
@@ -29,3 +30,9 @@ Import-Module  "${吴乐川的模块的路径}\吴乐川-集得源管理工具�
 
 # Add-吴乐川添加单个集得源  -集得源在本机采用的名称 '集得源丙之名称' `
 #     -特征颜色 'Yellow'    -集得源之完整地址 '集得源丙之统一资源定位符'
+
+
+
+if ("$执行本命令前的工作路径" -ne "$PWD") {
+    Set-Location  "$执行本命令前的工作路径"
+}

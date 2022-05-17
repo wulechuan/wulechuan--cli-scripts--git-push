@@ -1,10 +1,16 @@
 #
 
+Write-Host $PWD
+
 if ("$PWD" -match "\\用于研发阶段的命令行工具\\PowerShell`$") {
+    $执行本命令前的工作路径 = "$PWD"
     Set-Location '..\..\'
+    Write-Host $PWD
 }
 
-Write-Host $PWD
+Write-Host
+Write-Host
+Write-Host
 
 
 
@@ -28,3 +34,9 @@ Add-吴乐川添加单个集得源  -集得源在本机采用的名称 '吴乐�
 
 Add-吴乐川添加单个集得源  -集得源在本机采用的名称 '吴乐川：GitHub'  -特征颜色 'Yellow' `
     -集得源之完整地址 'git@github.com:wulechuan/wulechuan--cli-scripts--git-push.git'
+
+
+
+if ("$执行本命令前的工作路径" -ne "$PWD") {
+    Set-Location  "$执行本命令前的工作路径"
+}
