@@ -561,7 +561,7 @@ function 发布命令行脚本之范本集_主体功能 ({
 
 
 
-            const 命令行脚本文件之原始内容全文 = 文件系统工具之扩展版.readFileSync(原始范本文件之完整路径).toString()
+            const 命令行脚本文件之原始内容全文 = 文件系统工具之扩展版.readFileSync(拟发布成为之文件之完整路径).toString()
 
 
 
