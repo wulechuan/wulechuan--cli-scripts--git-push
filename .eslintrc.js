@@ -52,7 +52,7 @@ module.exports = {
         'no-implied-eval': 'error',
         'prefer-const': 'error',
         'arrow-body-style': 0,
-        'prefer-destructuring': ['error',
+        'prefer-destructuring': [ 0,
             {
                 VariableDeclarator: {
                     array: true,

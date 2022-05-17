@@ -369,8 +369,8 @@ function 发布命令行脚本之范本集_主体功能 ({
 
         let 原始文件确实存在 = false
         if (文件系统工具之扩展版.existsSync(原始范本文件之完整路径)) {
-            const vscode_tasksJSON_文件描述符 = 文件系统工具之扩展版.statSync(原始范本文件之完整路径)
-            if (vscode_tasksJSON_文件描述符.isFile()) {
+            const 文件描述符 = 文件系统工具之扩展版.statSync(原始范本文件之完整路径)
+            if (文件描述符.isFile()) {
                 原始文件确实存在 = true
             }
         }
@@ -411,8 +411,8 @@ function 发布命令行脚本之范本集_主体功能 ({
 
         let 欲发布的文件业已存在 = false
         if (文件系统工具之扩展版.existsSync(拟发布成为之文件之完整路径)) {
-            const vscode_tasksJSON_文件描述符 = 文件系统工具之扩展版.statSync(拟发布成为之文件之完整路径)
-            if (vscode_tasksJSON_文件描述符.isFile()) {
+            const 文件描述符 = 文件系统工具之扩展版.statSync(拟发布成为之文件之完整路径)
+            if (文件描述符.isFile()) {
                 欲发布的文件业已存在 = true
             }
         }

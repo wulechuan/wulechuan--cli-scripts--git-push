@@ -1,6 +1,6 @@
 {
   "name": "@wulechuan/cli-scripts--git-push",
-  "version": "4.0.0-alpha2",
+  "version": "4.0.0-beta1",
   "author": "吴乐川 <wulechuan@live.com>",
   "license": "WTFPL",
   "description": "此为吴乐川的《管理【集得】（Git）源的辅助性命令行工具》。本工具之主体并非采用 JavaScript 语言族编写，而是采用 2 种命令行环境之语言编写，即 PowerShell 语言和 Bash 语言。故本工具之主体仅用于（多种）命令行环境。当须将一个 npm 研发项目之代码库上推至多个【集得】源时，本工具可提供些许便利。",

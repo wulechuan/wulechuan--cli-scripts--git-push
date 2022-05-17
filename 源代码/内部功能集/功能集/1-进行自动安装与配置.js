@@ -130,28 +130,8 @@ Promise.all([
 } = {}) => {
     const 本工具集自身_packageJSON_之完整路径 = 路径工具.resolve(本工具集自身_packageJSON_相对于_nodejs_进程工作目录的路径)
     const 本工具集自身根文件夹之完整路径 = 路径工具.dirname(本工具集自身_packageJSON_之完整路径)
-
-    // const 路径甲 = 路径工具.resolve(路径工具.join('..'))
-    // const 路径乙 = 路径工具.resolve(路径工具.join('..', '..'))
-    // const 路径丙 = 路径工具.resolve(路径工具.join('..', '..', '..'))
-    // console.log(`\n\n @wulechuan/cli-scripts--git-push 路径甲 "${路径甲}"\n\n`)
-    // console.log(`\n\n @wulechuan/cli-scripts--git-push 路径乙 "${路径乙}"\n\n`)
-    // console.log(`\n\n @wulechuan/cli-scripts--git-push 路径丙 "${路径丙}"\n\n`)
-
-    const 视作须为其安装本工具集的_npm_项目的根文件的完整路径 = 路径工具.resolve(路径工具.join(
-        '..', // @wulechuan
-        '..', // node_modules
-        '..' // 接受本工具集服务的 npm 包
-    ))
-    console.log('\n\n @wulechuan/cli-scripts--git-push 本工具集自身根文件夹之完整路径', 本工具集自身根文件夹之完整路径, '\n\n')
-    console.log('\n\n @wulechuan/cli-scripts--git-push 视作须为其安装本工具集的_npm_项目的根文件的完整路径', 视作须为其安装本工具集的_npm_项目的根文件的完整路径, '\n\n')
-    console.log('\n\n @wulechuan/cli-scripts--git-push__dirname', __dirname, '\n\n')
-
-    const 用于容纳发布的各命令行脚本的文件树之根文件夹之完整路径 = 路径工具.join(
-        视作须为其安装本工具集的_npm_项目的根文件的完整路径, (用于容纳发布的各命令行脚本的文件树之根文件夹之相对路径 || '')
-    )
-
-
+    // console.log('\n\n @wulechuan/cli-scripts--git-push 本工具集自身根文件夹之完整路径', 本工具集自身根文件夹之完整路径, '\n\n')
+    // console.log('\n\n @wulechuan/cli-scripts--git-push__dirname', __dirname, '\n\n')
 
     return Promise.all([
         // 下方套一层 then 来传递 `本工具集自身的_packageJSON` ，唯一的目的是给 jsdocs 机会定义 `本工具集自身的_packageJSON` 的【范】（亦称所谓“类型”）。
@@ -163,6 +143,10 @@ Promise.all([
     ]) => {
         const 本工具集一切命令行消息之前缀 = `${粉笔工具.whiteBright(本工具集自身的_packageJSON.name)}：`
 
+
+
+
+
         if (执行各项功能之前应先呈现本工具之简介) {
             在命令行终端呈现本工具集之简介({
                 粉笔工具,
@@ -170,6 +154,33 @@ Promise.all([
                 本工具集自身的_packageJSON,
             })
         }
+
+
+
+
+
+        /** @type {string | null} */
+        const 视作须为其安装本工具集的_npm_项目的根文件的完整路径 = 本工具集随附之辅助工具集.探测采用本工具集的_npm_项目的根文件夹路径({
+            粉笔工具,
+            路径工具,
+            文件系统工具之扩展版,
+
+            本工具集一切命令行消息之前缀,
+
+            探测之起点之绝对路径: 本工具集自身根文件夹之完整路径,
+        })
+
+        if (!视作须为其安装本工具集的_npm_项目的根文件的完整路径) {
+            return Promise.reject({ 粉笔工具, 本工具集一切命令行消息之前缀 })
+        }
+
+
+
+        const 用于容纳发布的各命令行脚本的文件树之根文件夹之完整路径 = 路径工具.join(
+            视作须为其安装本工具集的_npm_项目的根文件的完整路径, (用于容纳发布的各命令行脚本的文件树之根文件夹之相对路径 || '')
+        )
+
+
 
         return {
             粉笔工具,
@@ -242,4 +253,22 @@ Promise.all([
             },
         },
     })
+}).catch(传入的工具集 => {
+    /** @type {范_粉笔工具} */
+    const 粉笔工具 = 传入的工具集.粉笔工具
+
+    /** @type {string} */
+    const 本工具集一切命令行消息之前缀 = 传入的工具集.本工具集一切命令行消息之前缀
+
+    console.log(`\n${
+        本工具集一切命令行消息之前缀
+    } ${
+        粉笔工具.bgRed.whiteBright(' 自动配置失败 ')
+    }\n\n    ${
+        '虽然本工具集的“自动配置”未能成功，'
+    }\n    ${
+        '但本工具集仍存在于 node_modules 文件夹中。'
+    }\n    ${
+        '不妨参阅文档进行手工配置。'
+    }\n\n\n`)
 })

@@ -1,7 +1,24 @@
 module.exports = {
     求当前时间之文本_可用于文件系统之文件名,
     将JSON中单个属性或成员配置为新值,
+    探测采用本工具集的_npm_项目的根文件夹路径,
 }
+
+
+
+
+
+/**
+ * @typedef {import('chalk').ChalkInstance} 范_粉笔工具
+ */
+
+/**
+ * @typedef {import('node:path')} 范_路径工具
+ */
+
+/**
+ * @typedef {import('fs-extra')} 范_文件系统工具之扩展版
+ */
 
 
 
@@ -117,5 +134,123 @@ function 将JSON中单个属性或成员配置为新值 (旧有实体, 拟配置
     return {
         已有改动: true,
         新实体: 拟配置为该实体,
+    }
+}
+
+
+
+
+
+/**
+ * @param {object}                  配置项集
+ * @param {范_粉笔工具}             配置项集.粉笔工具
+ * @param {范_路径工具}             配置项集.路径工具
+ * @param {范_文件系统工具之扩展版} 配置项集.文件系统工具之扩展版
+ *
+ * @param {string}                  配置项集.本工具集一切命令行消息之前缀
+ * @param {string}                  配置项集.探测之起点之绝对路径
+ *
+ * @returns {string | null} 探测到的路径文本，或 null 。
+ */
+function 探测采用本工具集的_npm_项目的根文件夹路径 ({
+    粉笔工具,
+    路径工具,
+    文件系统工具之扩展版,
+
+    本工具集一切命令行消息之前缀,
+    探测之起点之绝对路径,
+} = {}) {
+    /**
+     * @param {string} 待检验的路径
+     * @returns {boolean}
+     */
+    function 某路径为真实存在的文件 (待检验的路径) {
+        let 确为文件 = false
+        if (文件系统工具之扩展版.existsSync(待检验的路径)) {
+            const 文件描述符 = 文件系统工具之扩展版.statSync(待检验的路径)
+            if (文件描述符.isFile()) {
+                确为文件 = true
+            }
+        }
+        return 确为文件
+    }
+
+
+
+    if (!探测之起点之绝对路径 || typeof 探测之起点之绝对路径 !== 'string' || !路径工具.isAbsolute(探测之起点之绝对路径)) {
+        console.log(`\n\n${
+            本工具集一切命令行消息之前缀
+        } 的自动配置任务：\n\n    ${
+            粉笔工具.red('探测之起点之路径必须是绝对路径。')
+        }`)
+
+        return null
+    }
+
+    if (某路径为真实存在的文件(探测之起点之绝对路径)) {
+        探测之起点之绝对路径 = 路径工具.dirname(探测之起点之绝对路径)
+    }
+
+    if (!文件系统工具之扩展版.existsSync(探测之起点之绝对路径)) {
+        console.log(`\n\n${
+            本工具集一切命令行消息之前缀
+        } 的自动配置任务：\n\n    ${
+            粉笔工具.red('探测之起点之路径无效。')
+        }`)
+
+        return null
+    }
+
+
+
+    const 各路径片段之列表 = 探测之起点之绝对路径.split(/[\\/]/).filter(路径片段 => !!路径片段)
+    // console.log(各路径片段之列表)
+
+    const 在最顶层_node_modules_之上的各路径片段 = []
+    const 自顶而下找到了一个_node_modules = 各路径片段之列表.some(路径片段 => {
+        if (路径片段 === 'node_modules') {
+            return true
+        }
+
+        在最顶层_node_modules_之上的各路径片段.push(路径片段)
+    })
+
+    if (!自顶而下找到了一个_node_modules) {
+        console.log(`\n\n${
+            本工具集一切命令行消息之前缀
+        } 的自动配置任务：\n\n    ${
+            粉笔工具.red(`探测之起点所有的上层文件夹没有一个名为 “${粉笔工具.white('node_modules')}”。这不合规。`)
+        }`)
+
+        return null
+    }
+
+    const 理想的文件夹之完整路径 = 在最顶层_node_modules_之上的各路径片段.join(路径工具.sep)
+    const 理想路径中的_packageJSON_的完整路径 = 路径工具.join(理想的文件夹之完整路径, 'package.json')
+
+    if (某路径为真实存在的文件(理想路径中的_packageJSON_的完整路径)) {
+        const 采用本工具集之_npm_包之_packageJSON = 文件系统工具之扩展版.readJSONSync(理想路径中的_packageJSON_的完整路径)
+
+        console.log(`\n\n${
+            本工具集一切命令行消息之前缀
+        } 的自动配置任务：\n\n    ${
+            粉笔工具.green('成功探测到采用本工具集之 npm 包。')
+        }\n        名为 "${
+            粉笔工具.white(采用本工具集之_npm_包之_packageJSON.name)
+        }"\n        路径为 "${
+            粉笔工具.greenBright(理想的文件夹之完整路径)
+        }"`)
+
+        return 理想的文件夹之完整路径
+    } else {
+        console.log(`\n\n${
+            本工具集一切命令行消息之前缀
+        } 的自动配置任务：\n\n    ${
+            粉笔工具.red('探测到疑似采用本工具集之 npm 包之根文件夹，')
+        }\n    ${
+            粉笔工具.red('但其中没有找到 package.json 这一文件。')
+        }`)
+
+        return null
     }
 }
