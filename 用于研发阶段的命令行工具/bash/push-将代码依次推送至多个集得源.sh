@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# 在采用本工具集的其他 npm 项目中，应这样写：
+# source  './node_modules/@wulechuan/cli-scripts--git-push/源代码/发布的源代码/bash/吴乐川-集得源管理工具集.sh'
+
+# 下方这一行的写法专门针对本工具集自身，不适应于其他任何 npm 项。
 source  './源代码/发布的源代码/bash/吴乐川-集得源管理工具集.sh'
 
 吴乐川-集得上推至一个或多个源-显示开始之提示语

@@ -10,7 +10,7 @@
     "test": "npm  run  检验所有代码    &&    node  ./测试集/测试任务集/index.js",
     "start": "node  .",
     "每当制作集得之版本之前": "npm  i    &&    npm  test",
-    "自动安装与配置": "node  ./源代码/内部功能集/功能集/0-进行自动安装与配置.js",
+    "自动安装与配置": "node  ./源代码/内部功能集/功能集/1-进行自动安装与配置.js",
     "postinstall": "npm  run  自动安装与配置"
   },
   "dependencies": {

@@ -13,7 +13,12 @@ Write-Host
 
 
 
+# 在采用本工具集的其他 npm 项目中，应这样写：
+# $吴乐川的模块的路径 = '.\node_modules\@wulechuan\cli-scripts--git-push\源代码\发布的源代码\PowerShell'
+
+# 下方这一行的写法专门针对本工具集自身，不适应于其他任何 npm 项。
 $吴乐川的模块的路径 = '.\源代码\发布的源代码\PowerShell'
+
 Import-Module  "${吴乐川的模块的路径}\吴乐川-文本处理工具.psm1"
 Import-Module  "${吴乐川的模块的路径}\吴乐川-文本显示工具.psm1"
 Import-Module  "${吴乐川的模块的路径}\吴乐川-集得源管理工具集.psm1"
