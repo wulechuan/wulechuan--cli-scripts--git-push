@@ -5,7 +5,6 @@ module.exports = {
     },
     extends: [
         'eslint:recommended',
-        'plugin:import/recommended',
     ],
     parserOptions: {
         ecmaVersion: 2021,
