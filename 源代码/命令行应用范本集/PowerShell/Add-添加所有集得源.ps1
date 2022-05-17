@@ -1,10 +1,15 @@
 #
 
+Write-Host $PWD
+
 if ("$PWD" -match "\\用于研发阶段的命令行工具\\PowerShell`$") {
-    Set-Location '..\..\'
+    Set-Location '..\..\' # 确保进程的当前路径为接受本工具集服务的 npm 包的根文件夹。
+    Write-Host $PWD
 }
 
-Write-Host $PWD
+Write-Host
+Write-Host
+Write-Host
 
 
 

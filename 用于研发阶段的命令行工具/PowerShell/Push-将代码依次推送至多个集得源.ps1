@@ -1,6 +1,15 @@
-# 本文件之文件名冠以英语句点“.”，是为了在 Shell 或 Git Bash 环境下，令本文件不可见。
+#
 
 Write-Host $PWD
+
+if ("$PWD" -match "\\用于研发阶段的命令行工具\\PowerShell`$") {
+    Set-Location '..\..\'
+    Write-Host $PWD
+}
+
+Write-Host
+Write-Host
+Write-Host
 
 
 

@@ -21,14 +21,14 @@
         },
         {
             "type": "shell",
-            "command": "pwsh  -Command '.Push-将代码依次推送至多个集得源.ps1'",
+            "command": "pwsh  -Command '.\\用于研发阶段的命令行工具\\PowerShell\\Push-将代码依次推送至多个集得源.ps1'",
             "group": "none",
             "problemMatcher": [],
             "label": "将代码依次推送至多个集得源（PowerShell）"
         },
         // {
         //     "type": "shell",
-        //     "command": "bash  -c 'source  ./push-将代码依次推送至多个集得源.sh'",
+        //     "command": "bash  -c 'source  ./用于研发阶段的命令行工具/bash/push-将代码依次推送至多个集得源.sh'",
         //     "group": "none",
         //     "problemMatcher": [],
         //     "label": "将代码依次推送至多个集得源（Bash）"

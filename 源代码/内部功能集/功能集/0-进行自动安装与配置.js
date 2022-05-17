@@ -8,6 +8,7 @@
  */
 
 const 执行各项功能之前应先呈现本工具之简介 = false
+const 用于研发阶段的命令行工具_这一文件夹之相对路径 = null
 const 发布本工具集随附的命令行脚本时_个别脚本文件应发布在目标项目之根文件夹下 = false
 
 const 视作_dotvscode_文件夹的文件夹之相对路径 = '.vscode'
@@ -133,18 +134,18 @@ Promise.all([
     // const 路径甲 = 路径工具.resolve(路径工具.join('..'))
     // const 路径乙 = 路径工具.resolve(路径工具.join('..', '..'))
     // const 路径丙 = 路径工具.resolve(路径工具.join('..', '..', '..'))
-    // console.log(`\n\n\n @wulechuan/cli-scripts--git-push 路径甲 "${路径甲}"\n\n\n`)
-    // console.log(`\n\n\n @wulechuan/cli-scripts--git-push 路径乙 "${路径乙}"\n\n\n`)
-    // console.log(`\n\n\n @wulechuan/cli-scripts--git-push 路径丙 "${路径丙}"\n\n\n`)
+    // console.log(`\n\n @wulechuan/cli-scripts--git-push 路径甲 "${路径甲}"\n\n`)
+    // console.log(`\n\n @wulechuan/cli-scripts--git-push 路径乙 "${路径乙}"\n\n`)
+    // console.log(`\n\n @wulechuan/cli-scripts--git-push 路径丙 "${路径丙}"\n\n`)
 
     const 视作须为其安装本工具集的_npm_项目的根文件的完整路径 = 路径工具.resolve(路径工具.join(
         '..', // @wulechuan
         '..', // node_modules
-        '..' // 本工具集向其提供服务的 npm 包
+        '..' // 接受本工具集服务的 npm 包
     ))
-    console.log('\n\n\n @wulechuan/cli-scripts--git-push 本工具集自身根文件夹之完整路径', 本工具集自身根文件夹之完整路径, '\n\n\n')
-    console.log('\n\n\n @wulechuan/cli-scripts--git-push 视作须为其安装本工具集的_npm_项目的根文件的完整路径', 视作须为其安装本工具集的_npm_项目的根文件的完整路径, '\n\n\n')
-    console.log('\n\n\n @wulechuan/cli-scripts--git-push__dirname', __dirname, '\n\n\n')
+    console.log('\n\n @wulechuan/cli-scripts--git-push 本工具集自身根文件夹之完整路径', 本工具集自身根文件夹之完整路径, '\n\n')
+    console.log('\n\n @wulechuan/cli-scripts--git-push 视作须为其安装本工具集的_npm_项目的根文件的完整路径', 视作须为其安装本工具集的_npm_项目的根文件的完整路径, '\n\n')
+    console.log('\n\n @wulechuan/cli-scripts--git-push__dirname', __dirname, '\n\n')
 
     const 用于容纳发布的各命令行脚本的文件树之根文件夹之完整路径 = 路径工具.join(
         视作须为其安装本工具集的_npm_项目的根文件的完整路径, (用于容纳发布的各命令行脚本的文件树之根文件夹之相对路径 || '')
@@ -225,6 +226,7 @@ Promise.all([
             自动配置_vscode_tasksJSON: {
                 视作须为其安装本工具集的_npm_项目的根文件的完整路径,
                 视作_dotvscode_文件夹的文件夹之相对路径,
+                用于研发阶段的命令行工具_这一文件夹之相对路径,
                 发布本工具集随附的命令行脚本时_个别脚本文件应发布在目标项目之根文件夹下,
                 vscode_tasksJSON_纵使有变动也不应制作备份文件,
             },
@@ -233,6 +235,7 @@ Promise.all([
                 视作须为其安装本工具集的_npm_项目的根文件的完整路径,
                 用于容纳发布的各命令行脚本的文件树之根文件夹之完整路径,
                 本工具集随附命令行应用范本集文件夹之相对路径,
+                用于研发阶段的命令行工具_这一文件夹之相对路径,
                 发布本工具集随附的命令行脚本时_个别脚本文件应发布在目标项目之根文件夹下,
                 发布本工具集随附的命令行脚本时应覆盖旧有的命令行脚本文件,
                 发布本工具集随附的命令行脚本时若覆盖旧有的命令行脚本文件则先行备份,

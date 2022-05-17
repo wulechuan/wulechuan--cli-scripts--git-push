@@ -33,6 +33,10 @@
  */
 
 /**
+ * @typedef {import('./0-常量表')} 范_本工具集之内部常量表
+ */
+
+/**
  * @typedef {import('../../../package.json')} 范_本工具集自身的_packageJSON
  */
 
@@ -49,6 +53,7 @@
  * @param {范_微软_jsonc_处理机}          配置项集.微软_jsonc_处理机
  *
  * @param {范_本工具集随附之辅助工具集}   配置项集.本工具集随附之辅助工具集
+ * @param {范_本工具集之内部常量表}       配置项集.本工具集之内部常量表
  *
  * @param {string}                        配置项集.本工具集一切命令行消息之前缀
  * @param {string}                        配置项集.本工具集自身根文件夹之完整路径
@@ -56,6 +61,7 @@
  *
  * @param {string}                        配置项集.视作须为其安装本工具集的_npm_项目的根文件的完整路径
  * @param {string}                        配置项集.视作_dotvscode_文件夹的文件夹之相对路径
+ * @param {string}                        配置项集.用于研发阶段的命令行工具_这一文件夹之相对路径
  * @param {boolean}                       配置项集.发布本工具集随附的命令行脚本时_个别脚本文件应发布在目标项目之根文件夹下
  * @param {boolean}                       配置项集.vscode_tasksJSON_纵使有变动也不应制作备份文件
  *
@@ -77,6 +83,7 @@ module.exports = function 自动配置_vscode_tasksJSON ({
 
     视作须为其安装本工具集的_npm_项目的根文件的完整路径,
     视作_dotvscode_文件夹的文件夹之相对路径,
+    用于研发阶段的命令行工具_这一文件夹之相对路径,
     发布本工具集随附的命令行脚本时_个别脚本文件应发布在目标项目之根文件夹下,
     vscode_tasksJSON_纵使有变动也不应制作备份文件,
 } = {}) {
@@ -91,10 +98,13 @@ module.exports = function 自动配置_vscode_tasksJSON ({
     }
 
     return Promise.all([
-        // 暂无需要导入的模块。
+        import('./0-常量表.js'),
     ]).then(([
-        // 暂无导入的模块。
+        本工具集之内部常量表_模块,
     ]) => {
+        /** @type {范_本工具集之内部常量表} */
+        const 本工具集之内部常量表 = 本工具集之内部常量表_模块.default
+
         return vscode_tasksJSON_自动配置功能之主体({
             粉笔工具,
             路径工具,
@@ -102,6 +112,7 @@ module.exports = function 自动配置_vscode_tasksJSON ({
             微软_jsonc_处理机,
 
             本工具集随附之辅助工具集,
+            本工具集之内部常量表,
 
             本工具集一切命令行消息之前缀,
             本工具集自身根文件夹之完整路径,
@@ -109,6 +120,7 @@ module.exports = function 自动配置_vscode_tasksJSON ({
 
             视作须为其安装本工具集的_npm_项目的根文件的完整路径,
             视作_dotvscode_文件夹的文件夹之相对路径,
+            用于研发阶段的命令行工具_这一文件夹之相对路径,
             发布本工具集随附的命令行脚本时_个别脚本文件应发布在目标项目之根文件夹下,
             vscode_tasksJSON_纵使有变动也不应制作备份文件,
         })
@@ -128,6 +140,7 @@ module.exports = function 自动配置_vscode_tasksJSON ({
  * @param {范_微软_jsonc_处理机}          配置项集.微软_jsonc_处理机
  *
  * @param {范_本工具集随附之辅助工具集}   配置项集.本工具集随附之辅助工具集
+ * @param {范_本工具集之内部常量表}       配置项集.本工具集之内部常量表
  *
  * @param {string}                        配置项集.本工具集一切命令行消息之前缀
  * @param {string}                        配置项集.本工具集自身根文件夹之完整路径
@@ -135,6 +148,7 @@ module.exports = function 自动配置_vscode_tasksJSON ({
  *
  * @param {string}                        配置项集.视作须为其安装本工具集的_npm_项目的根文件的完整路径
  * @param {string}                        配置项集.视作_dotvscode_文件夹的文件夹之相对路径
+ * @param {string}                        配置项集.用于研发阶段的命令行工具_这一文件夹之相对路径
  * @param {boolean}                       配置项集.发布本工具集随附的命令行脚本时_个别脚本文件应发布在目标项目之根文件夹下
  * @param {boolean}                       配置项集.vscode_tasksJSON_纵使有变动也不应制作备份文件
  *
@@ -147,6 +161,7 @@ function vscode_tasksJSON_自动配置功能之主体 ({
     微软_jsonc_处理机,
 
     本工具集随附之辅助工具集,
+    本工具集之内部常量表,
 
     本工具集一切命令行消息之前缀,
     本工具集自身根文件夹之完整路径,
@@ -154,6 +169,7 @@ function vscode_tasksJSON_自动配置功能之主体 ({
 
     视作须为其安装本工具集的_npm_项目的根文件的完整路径,
     视作_dotvscode_文件夹的文件夹之相对路径,
+    用于研发阶段的命令行工具_这一文件夹之相对路径,
     发布本工具集随附的命令行脚本时_个别脚本文件应发布在目标项目之根文件夹下,
     vscode_tasksJSON_纵使有变动也不应制作备份文件,
 }) {
@@ -168,8 +184,15 @@ function vscode_tasksJSON_自动配置功能之主体 ({
         求当前时间之文本_可用于文件系统之文件名,
     } = 本工具集随附之辅助工具集
 
+    const {
+        用于研发阶段的命令行工具_这一文件夹之相对路径_默认值,
+    } = 本工具集之内部常量表
 
 
+
+    if (typeof 用于研发阶段的命令行工具_这一文件夹之相对路径 !== 'string' || !用于研发阶段的命令行工具_这一文件夹之相对路径.trim()) {
+        用于研发阶段的命令行工具_这一文件夹之相对路径 = 用于研发阶段的命令行工具_这一文件夹之相对路径_默认值
+    }
 
 
     const {
@@ -310,7 +333,7 @@ function vscode_tasksJSON_自动配置功能之主体 ({
 
                 command: 发布本工具集随附的命令行脚本时_个别脚本文件应发布在目标项目之根文件夹下
                     ? 'pwsh  -Command \'.\\.Push-将代码依次推送至多个集得源.ps1\''
-                    : 'pwsh  -Command \'.\\用于研发阶段的命令行工具\\PowerShell\\Push-将代码依次推送至多个集得源.ps1\''
+                    : `pwsh  -Command '.\\${用于研发阶段的命令行工具_这一文件夹之相对路径}\\PowerShell\\Push-将代码依次推送至多个集得源.ps1'`
                 ,
 
                 group: 'none',
