@@ -194,21 +194,22 @@ function vscode_tasksJSON_自动配置功能之主体 ({
         用于研发阶段的命令行工具_这一文件夹之相对路径 = 用于研发阶段的命令行工具_这一文件夹之相对路径_默认值
     }
 
+    const 用于研发阶段的命令行工具_这一文件夹之相对路径_各级片段之列表 = 用于研发阶段的命令行工具_这一文件夹之相对路径.split(/[\\/]/).filter(路径片段 => !!路径片段)
+    const 用于研发阶段的命令行工具_这一文件夹之相对路径_用于调用某_PowerShell = 用于研发阶段的命令行工具_这一文件夹之相对路径_各级片段之列表.join('\\')
+    const 用于研发阶段的命令行工具_这一文件夹之相对路径_用于调用某_bash = 用于研发阶段的命令行工具_这一文件夹之相对路径_各级片段之列表.join('/')
 
-    const {
-        join: 拼接路径片段,
-    } = 路径工具 // .posix
+
 
     if (typeof 视作_dotvscode_文件夹的文件夹之相对路径 !== 'string' || !视作_dotvscode_文件夹的文件夹之相对路径.trim()) {
         视作_dotvscode_文件夹的文件夹之相对路径 = '.vscode'
     }
 
-    const vscode_tasksJSON_文件所处之文件夹之完整路径 = 拼接路径片段(
+    const vscode_tasksJSON_文件所处之文件夹之完整路径 = 路径工具.join(
         视作须为其安装本工具集的_npm_项目的根文件的完整路径,
         视作_dotvscode_文件夹的文件夹之相对路径
     )
 
-    const vscode_tasksJSON_文件之完整路径 = 拼接路径片段(
+    const vscode_tasksJSON_文件之完整路径 = 路径工具.join(
         vscode_tasksJSON_文件所处之文件夹之完整路径,
         'tasks.json'
     )
@@ -333,7 +334,7 @@ function vscode_tasksJSON_自动配置功能之主体 ({
 
                 command: 发布本工具集随附的命令行脚本时_个别脚本文件应发布在目标项目之根文件夹下
                     ? 'pwsh  -Command \'.\\.Push-将代码依次推送至多个集得源.ps1\''
-                    : `pwsh  -Command '.\\${用于研发阶段的命令行工具_这一文件夹之相对路径}\\PowerShell\\Push-将代码依次推送至多个集得源.ps1'`
+                    : `pwsh  -Command '.\\${用于研发阶段的命令行工具_这一文件夹之相对路径_用于调用某_PowerShell}\\PowerShell\\Push-将代码依次推送至多个集得源.ps1'`
                 ,
 
                 group: 'none',
@@ -354,7 +355,7 @@ function vscode_tasksJSON_自动配置功能之主体 ({
 
                 command: 发布本工具集随附的命令行脚本时_个别脚本文件应发布在目标项目之根文件夹下
                     ? 'bash  -c \'source  ./push-将代码依次推送至多个集得源.sh\''
-                    : 'bash  -c \'source  ./用于研发阶段的命令行工具/bash/push-将代码依次推送至多个集得源.sh\''
+                    : `bash  -c 'source  ./${用于研发阶段的命令行工具_这一文件夹之相对路径_用于调用某_bash}/bash/push-将代码依次推送至多个集得源.sh'`
                 ,
 
                 group: 'none',
