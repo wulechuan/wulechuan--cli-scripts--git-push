@@ -22,5 +22,5 @@ ReadMe.html
 
 
 # ----- 本计算机专用资料 ---------------
-package-lock.json
+# package-lock.json
 .vscode/**/tasks-*

@@ -35,6 +35,14 @@
 
 ## 简介
 
+### 言简意赅版
+
+简言之，本工具集侧重为命令行做装点，提供相对美观、易读的界面信息，而鲜少有复杂的任务逻辑。何况所谓“核心”的任务逻辑，是因项目而异的，故并非通用的工具集所及。正因为本工具用于助力美化命令界面，其所谓“实用”价值不高。但它们满足了我个人的癖好。
+
+另，每当在其他 npm 项目中安装本工具集时，本工具内建的 JavaScript 程序可自动化的对那个 npm 项目进行配置，以尽可能减少或简化后续的配置任务。
+
+### 冗长版
+
 我们的研发项目，其代码库常常采用【集得】（外国话 Git）来管理项目的代码等文件。并且，这样的集得仓库往往要同时对标多个【集得源】（外国话是 Remote）。
 
 > 例如典型的，本人的许多项目会同时连接 *码云* 、*阿里云的代码库* 或 *阿里云的 CodeUp 代码库* 、*美国微软公司的 GitHub* 等。
@@ -115,19 +123,20 @@ git  push  美国GitHub
 该示例之功用：逐一添加 3 个集得源，并令过程在命令行窗口中较美观地呈现。
 
 ```ps1
-$吴乐川的模块的路径 = '.\node_modules\@wulechuan\cli-scripts--git-push\源代码\PowerShell'
+$吴乐川的模块的路径 = '.\node_modules\@wulechuan\cli-scripts--git-push\源代码\发布的源代码\PowerShell'
+
 Import-Module  "${吴乐川的模块的路径}\吴乐川-文本处理工具.psm1"
 Import-Module  "${吴乐川的模块的路径}\吴乐川-文本显示工具.psm1"
 Import-Module  "${吴乐川的模块的路径}\吴乐川-集得源管理工具集.psm1"
 
-Add-吴乐川添加单个集得源  -集得源在本机采用的名称 '吴乐川：码云'   -特征颜色 'DarkRed' `
-    -集得源之完整地址 'git@gitee.com:nanchang-wulechuan/wulechuan--cli-scripts--git-push.git'
+Add-吴乐川添加单个集得源  -集得源在本机采用的名称 '吴乐川：码云' `
+    -特征颜色 'DarkRed'      -集得源之完整地址 'git@gitee.com:nanchang-wulechuan/wulechuan--cli-scripts--git-push.git'
 
-Add-吴乐川添加单个集得源  -集得源在本机采用的名称 '吴乐川：阿里云'  -特征颜色 'Blue' `
-    -集得源之完整地址 'git@code.aliyun.com:wulechuan/wulechuan--cli-scripts--git-push.git'
+Add-吴乐川添加单个集得源  -集得源在本机采用的名称 '吴乐川：阿里云' `
+    -特征颜色 'Blue'         -集得源之完整地址 'git@code.aliyun.com:wulechuan/wulechuan--cli-scripts--git-push.git'
 
-Add-吴乐川添加单个集得源  -集得源在本机采用的名称 '吴乐川：GitHub'  -特征颜色 'Yellow' `
-    -集得源之完整地址 'git@github.com:wulechuan/wulechuan--cli-scripts--git-push.git'
+Add-吴乐川添加单个集得源  -集得源在本机采用的名称 '吴乐川：GitHub' `
+    -特征颜色 'Yellow'       -集得源之完整地址 'git@github.com:wulechuan/wulechuan--cli-scripts--git-push.git'
 ```
 
 ##### PowerShell 环境中的用法示例 2
@@ -135,7 +144,8 @@ Add-吴乐川添加单个集得源  -集得源在本机采用的名称 '吴乐�
 该示例之功用：将当前的文件仓库上推至某个集得源，并令过程在命令行窗口中较美观地呈现。
 
 ```ps1
-$吴乐川的模块的路径 = '.\node_modules\@wulechuan\cli-scripts--git-push\源代码\PowerShell'
+$吴乐川的模块的路径 = '.\node_modules\@wulechuan\cli-scripts--git-push\源代码\发布的源代码\PowerShell'
+
 Import-Module  "${吴乐川的模块的路径}\吴乐川-文本处理工具.psm1"
 Import-Module  "${吴乐川的模块的路径}\吴乐川-文本显示工具.psm1"
 Import-Module  "${吴乐川的模块的路径}\吴乐川-集得源管理工具集.psm1"
@@ -149,7 +159,8 @@ Push-吴乐川集得上推至单个源  '吴乐川：码云'  -集得源之显�
 该示例之功用：将当前的文件仓库依次上推至 3 个集得源，并令过程在命令行窗口中较美观地呈现。特别的，还故意呈现了开始和结束提示语。
 
 ```ps1
-$吴乐川的模块的路径 = '.\node_modules\@wulechuan\cli-scripts--git-push\源代码\PowerShell'
+$吴乐川的模块的路径 = '.\node_modules\@wulechuan\cli-scripts--git-push\源代码\发布的源代码\PowerShell'
+
 Import-Module  "${吴乐川的模块的路径}\吴乐川-文本处理工具.psm1"
 Import-Module  "${吴乐川的模块的路径}\吴乐川-文本显示工具.psm1"
 Import-Module  "${吴乐川的模块的路径}\吴乐川-集得源管理工具集.psm1"
@@ -171,7 +182,7 @@ Write-吴乐川显示_集得上推至一个或多个源_结束之提示语
 该示例之功用：将当前的文件仓库上推至某个集得源，并令过程在命令行窗口中较美观地呈现。
 
 ```bash
-.  './node_modules/@wulechuan/cli-scripts--git-push/源代码/bash/吴乐川-集得源管理工具集.sh'
+source  './node_modules/@wulechuan/cli-scripts--git-push/源代码/发布的源代码/bash/吴乐川-集得源管理工具集.sh'
 
 吴乐川-集得上推至单个源  --should-skip=false \
     --git-origin-name='吴乐川：码云' \
@@ -184,7 +195,7 @@ Write-吴乐川显示_集得上推至一个或多个源_结束之提示语
 该示例之功用：将当前的文件仓库依次上推至 3 个集得源，并令过程在命令行窗口中较美观地呈现。特别的，还故意呈现了开始和结束提示语。
 
 ```bash
-.  './node_modules/@wulechuan/cli-scripts--git-push/源代码/bash/吴乐川-集得源管理工具集.sh'
+source  './node_modules/@wulechuan/cli-scripts--git-push/源代码/发布的源代码/bash/吴乐川-集得源管理工具集.sh'
 
 吴乐川-集得上推至一个或多个源-显示开始之提示语
 
