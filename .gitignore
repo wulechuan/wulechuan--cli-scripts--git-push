@@ -14,7 +14,7 @@ node_modules/
 
 # ----- 可重复构建之资源 ---------------
 文档集/**/*.html
-ReadMe.html
+ReadMe*.html
 测试集/各测试任务产出的文件/
 
 
@@ -23,4 +23,4 @@ ReadMe.html
 
 # ----- 本计算机专用资料 ---------------
 # package-lock.json
-.vscode/**/tasks-*
+.vscode/**/tasks-吴乐川备份*
