@@ -28,9 +28,9 @@ module.exports = function 在命令行终端窗口打印本工具集之简介 ({
 
     console.log(`\n${
         本工具集一切命令行消息之前缀
-    } ${
+    } 《${
         粉笔工具.bgGreenBright.black(' 简介 ')
-    }\n\n${
+    }》\n\n${
         单层缩进}${单层缩进含列表符号
     }${
         本工具集自身的_packageJSON.description
@@ -43,12 +43,12 @@ module.exports = function 在命令行终端窗口打印本工具集之简介 ({
     }PowerShell ：\n${
         单层缩进.repeat(3)
     }${
-        粉笔工具.cyanBright('<本工具集之根文件夹>\\用于研发阶段的命令行工具\\PowerShell\\Push-将代码依次推送至多个集得源.ps1')
+        粉笔工具.cyanBright('<本工具集之根文件夹>.\\用于研发阶段的命令行工具\\PowerShell\\Push-将代码依次推送至多个集得源.ps1')
     }\n\n${
         单层缩进}${单层缩进含列表符号
     }bash ：\n${
         单层缩进.repeat(3)
     }${
-        粉笔工具.yellowBright('<本工具集之根文件夹>/用于研发阶段的命令行工具/bash/push-将代码依次推送至多个集得源.sh')
+        粉笔工具.yellowBright('<本工具集之根文件夹>./用于研发阶段的命令行工具/bash/push-将代码依次推送至多个集得源.sh')
     }\n`)
 }

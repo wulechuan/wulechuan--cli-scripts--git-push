@@ -177,7 +177,7 @@ function vscode_tasksJSON_自动配置功能之主体 ({
         本工具集一切命令行消息之前缀
     } ${
         粉笔工具.bgGreenBright.black(' 现在开始配置 VSCode 的任务 ')
-    }\n`)
+    } 。\n`)
 
     const {
         将JSON中单个属性或成员配置为新值,

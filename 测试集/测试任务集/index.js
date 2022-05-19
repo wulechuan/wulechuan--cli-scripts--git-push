@@ -141,7 +141,7 @@ Promise.all([
     ]).then(([
         本工具集自身的_packageJSON,
     ]) => {
-        const 本工具集一切命令行消息之前缀 = `${粉笔工具.whiteBright(本工具集自身的_packageJSON.name)}：`
+        const 本工具集一切命令行消息之前缀 = `${粉笔工具.whiteBright(本工具集自身的_packageJSON.name)} ${粉笔工具.bgRed.whiteBright('【测试任务】')}：`
 
 
 
@@ -269,6 +269,6 @@ Promise.all([
             本工具集一切命令行消息之前缀
         } ${
             粉笔工具.bgGreen.black(' 不必执行自动配置 ')
-        }\n\n\n`)
+        } 。\n\n\n`)
     }
 })
