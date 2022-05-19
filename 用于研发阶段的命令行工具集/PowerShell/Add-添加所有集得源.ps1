@@ -31,7 +31,7 @@ PROCESS {
 BEGIN {
     Write-Host "当下工作路径：`n    '$PWD'"
 
-    if ("$PWD" -match "\\用于研发阶段的命令行工具\\PowerShell`$") {
+    if ("$PWD" -match "\\用于研发阶段的命令行工具集\\PowerShell`$") {
         ${local:执行本命令前的工作路径} = "$PWD"
         Set-Location '..\..\'
         Write-Host "当下工作路径临时变更为：`n    '$PWD'"

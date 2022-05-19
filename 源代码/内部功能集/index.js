@@ -28,6 +28,10 @@
  */
 
 /**
+ * @typedef {import('../辅助工具集')} 范_本工具集随附之辅助工具集
+ */
+
+/**
  * @typedef {import('./功能集/8-在命令行终端呈现本工具集之简介')} 范_在命令行终端呈现本工具集之简介
  */
 
@@ -46,11 +50,13 @@ Promise.all([
     import('chalk'),
     import('node:path'),
     import('fs-extra'),
+    import('./辅助工具集/index.js'),
     import('./功能集/8-在命令行终端呈现本工具集之简介.js'),
 ]).then(([
     粉笔工具_模块,
     路径工具_模块,
     文件系统工具之扩展版_模块,
+    本工具集随附之辅助工具集_模块,
     在命令行终端呈现本工具集之简介_模块,
 ]) => {
     /** @type {范_粉笔工具} */
@@ -62,59 +68,35 @@ Promise.all([
     /** @type {范_文件系统工具之扩展版} */
     const 文件系统工具之扩展版 = 文件系统工具之扩展版_模块.default
 
+    /** @type {范_本工具集随附之辅助工具集} */
+    const 本工具集随附之辅助工具集 = 本工具集随附之辅助工具集_模块.default
+
     /** @type {范_在命令行终端呈现本工具集之简介} */
     const 在命令行终端呈现本工具集之简介 = 在命令行终端呈现本工具集之简介_模块.default
 
-    return {
-        粉笔工具,
-        路径工具,
-        文件系统工具之扩展版,
-        在命令行终端呈现本工具集之简介,
-    }
-}).then(({
-    粉笔工具,
-    路径工具,
-    文件系统工具之扩展版,
-    在命令行终端呈现本工具集之简介,
-}) => {
+
+
+
+
     const 本工具集自身_packageJSON_之完整路径 = 路径工具.resolve(本工具集自身_packageJSON_相对于_nodejs_进程工作目录的路径)
 
+    /** @type {范_本工具集自身的_packageJSON} */
+    const 本工具集自身的_packageJSON = 文件系统工具之扩展版.readJSONSync(本工具集自身_packageJSON_之完整路径)
+
+    const 本工具集一切命令行消息之前缀 = `${
+        粉笔工具.whiteBright(本工具集自身的_packageJSON.name)
+    }： ${
+        粉笔工具.bgGray.whiteBright('【无实质功能的主接口】')
+    }`
 
 
-    return Promise.all([
-        // 下方套一层 then 来传递 `本工具集自身的_packageJSON` ，唯一的目的是给 jsdocs 机会定义 `本工具集自身的_packageJSON` 的【范】（亦称所谓“类型”）。
-        文件系统工具之扩展版.readJSON(本工具集自身_packageJSON_之完整路径).then(
-            (/** @type {范_本工具集自身的_packageJSON} */ 本工具集自身的_packageJSON) => 本工具集自身的_packageJSON
-        ),
-    ]).then(([
-        本工具集自身的_packageJSON,
-    ]) => {
-        const 本工具集一切命令行消息之前缀 = `${粉笔工具.whiteBright(本工具集自身的_packageJSON.name)}：`
 
-        return {
-            粉笔工具,
-            路径工具,
-            文件系统工具之扩展版,
 
-            本工具集一切命令行消息之前缀,
-            本工具集自身的_packageJSON,
 
-            在命令行终端呈现本工具集之简介,
-        }
-    })
-}).then(({
-    粉笔工具,
-    路径工具,
-    文件系统工具之扩展版,
-
-    本工具集一切命令行消息之前缀,
-    本工具集自身的_packageJSON,
-
-    在命令行终端呈现本工具集之简介,
-}) => {
     在命令行终端呈现本工具集之简介({
         粉笔工具,
         本工具集一切命令行消息之前缀,
+        本工具集随附之辅助工具集,
         本工具集自身的_packageJSON,
     })
 })

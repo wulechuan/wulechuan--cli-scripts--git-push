@@ -47,6 +47,8 @@
 /**
  * @param {object}                        配置项集
  *
+ * @param {boolean}                       配置项集.应开启调试功能
+ *
  * @param {范_粉笔工具}                   配置项集.粉笔工具
  * @param {范_路径工具}                   配置项集.路径工具
  * @param {范_文件系统工具之扩展版}       配置项集.文件系统工具之扩展版
@@ -61,13 +63,15 @@
  *
  * @param {string}                        配置项集.视作须为其安装本工具集的_npm_项目的根文件的完整路径
  * @param {string}                        配置项集.视作_dotvscode_文件夹的文件夹之相对路径
- * @param {string}                        配置项集.用于研发阶段的命令行工具_这一文件夹之相对路径
+ * @param {string}                        配置项集.用于研发阶段的命令行工具集_这一文件夹之相对路径
  * @param {boolean}                       配置项集.发布本工具集随附的命令行脚本时_个别脚本文件应发布在目标项目之根文件夹下
  * @param {boolean}                       配置项集.vscode_tasksJSON_纵使有变动也不应制作备份文件
  *
  * @returns {Promise<any>}
  */
 module.exports = function 自动配置_vscode_tasksJSON ({
+    应开启调试功能,
+
     粉笔工具,
     路径工具,
     文件系统工具之扩展版,
@@ -83,10 +87,12 @@ module.exports = function 自动配置_vscode_tasksJSON ({
 
     视作须为其安装本工具集的_npm_项目的根文件的完整路径,
     视作_dotvscode_文件夹的文件夹之相对路径,
-    用于研发阶段的命令行工具_这一文件夹之相对路径,
+    用于研发阶段的命令行工具集_这一文件夹之相对路径,
     发布本工具集随附的命令行脚本时_个别脚本文件应发布在目标项目之根文件夹下,
     vscode_tasksJSON_纵使有变动也不应制作备份文件,
 } = {}) {
+    应开启调试功能 && console.debug('>>>> 自动配置_vscode_tasksJSON <<<<')
+
     if (typeof 视作须为其安装本工具集的_npm_项目的根文件的完整路径 !== 'string' || !视作须为其安装本工具集的_npm_项目的根文件的完整路径.trim()) {
         return Promise.reject(new Error(`${
             本工具集一切命令行消息之前缀
@@ -102,6 +108,8 @@ module.exports = function 自动配置_vscode_tasksJSON ({
     ]).then(([
         本工具集之内部常量表_模块,
     ]) => {
+        应开启调试功能 && console.debug('>>>> 自动配置_vscode_tasksJSON then <<<<')
+
         /** @type {范_本工具集之内部常量表} */
         const 本工具集之内部常量表 = 本工具集之内部常量表_模块.default
 
@@ -120,7 +128,7 @@ module.exports = function 自动配置_vscode_tasksJSON ({
 
             视作须为其安装本工具集的_npm_项目的根文件的完整路径,
             视作_dotvscode_文件夹的文件夹之相对路径,
-            用于研发阶段的命令行工具_这一文件夹之相对路径,
+            用于研发阶段的命令行工具集_这一文件夹之相对路径,
             发布本工具集随附的命令行脚本时_个别脚本文件应发布在目标项目之根文件夹下,
             vscode_tasksJSON_纵使有变动也不应制作备份文件,
         })
@@ -148,7 +156,7 @@ module.exports = function 自动配置_vscode_tasksJSON ({
  *
  * @param {string}                        配置项集.视作须为其安装本工具集的_npm_项目的根文件的完整路径
  * @param {string}                        配置项集.视作_dotvscode_文件夹的文件夹之相对路径
- * @param {string}                        配置项集.用于研发阶段的命令行工具_这一文件夹之相对路径
+ * @param {string}                        配置项集.用于研发阶段的命令行工具集_这一文件夹之相对路径
  * @param {boolean}                       配置项集.发布本工具集随附的命令行脚本时_个别脚本文件应发布在目标项目之根文件夹下
  * @param {boolean}                       配置项集.vscode_tasksJSON_纵使有变动也不应制作备份文件
  *
@@ -169,14 +177,14 @@ function vscode_tasksJSON_自动配置功能之主体 ({
 
     视作须为其安装本工具集的_npm_项目的根文件的完整路径,
     视作_dotvscode_文件夹的文件夹之相对路径,
-    用于研发阶段的命令行工具_这一文件夹之相对路径,
+    用于研发阶段的命令行工具集_这一文件夹之相对路径,
     发布本工具集随附的命令行脚本时_个别脚本文件应发布在目标项目之根文件夹下,
     vscode_tasksJSON_纵使有变动也不应制作备份文件,
 }) {
-    console.log(`\n\n\n\n\n${
+    console.info(`\n\n\n\n\n${
         本工具集一切命令行消息之前缀
     } ${
-        粉笔工具.bgGreenBright.black(' 现在开始配置 VSCode 的任务 ')
+        粉笔工具.bgGreenBright.black(' 现在开始配置 VSCode 的任务集（ tasks.json ）')
     } 。\n`)
 
     const {
@@ -185,18 +193,18 @@ function vscode_tasksJSON_自动配置功能之主体 ({
     } = 本工具集随附之辅助工具集
 
     const {
-        用于研发阶段的命令行工具_这一文件夹之相对路径_默认值,
+        用于研发阶段的命令行工具集_这一文件夹之相对路径_默认值,
     } = 本工具集之内部常量表
 
 
 
-    if (typeof 用于研发阶段的命令行工具_这一文件夹之相对路径 !== 'string' || !用于研发阶段的命令行工具_这一文件夹之相对路径.trim()) {
-        用于研发阶段的命令行工具_这一文件夹之相对路径 = 用于研发阶段的命令行工具_这一文件夹之相对路径_默认值
+    if (typeof 用于研发阶段的命令行工具集_这一文件夹之相对路径 !== 'string' || !用于研发阶段的命令行工具集_这一文件夹之相对路径.trim()) {
+        用于研发阶段的命令行工具集_这一文件夹之相对路径 = 用于研发阶段的命令行工具集_这一文件夹之相对路径_默认值
     }
 
-    const 用于研发阶段的命令行工具_这一文件夹之相对路径_各级片段之列表 = 用于研发阶段的命令行工具_这一文件夹之相对路径.split(/[\\/]/).filter(路径片段 => !!路径片段)
-    const 用于研发阶段的命令行工具_这一文件夹之相对路径_用于调用某_PowerShell = 用于研发阶段的命令行工具_这一文件夹之相对路径_各级片段之列表.join('\\')
-    const 用于研发阶段的命令行工具_这一文件夹之相对路径_用于调用某_bash = 用于研发阶段的命令行工具_这一文件夹之相对路径_各级片段之列表.join('/')
+    const 用于研发阶段的命令行工具集_这一文件夹之相对路径_各级片段之列表 = 用于研发阶段的命令行工具集_这一文件夹之相对路径.split(/[\\/]/).filter(路径片段 => !!路径片段)
+    const 用于研发阶段的命令行工具集_这一文件夹之相对路径_用于调用某_PowerShell = 用于研发阶段的命令行工具集_这一文件夹之相对路径_各级片段之列表.join('\\')
+    const 用于研发阶段的命令行工具集_这一文件夹之相对路径_用于调用某_bash = 用于研发阶段的命令行工具集_这一文件夹之相对路径_各级片段之列表.join('/')
 
 
 
@@ -234,24 +242,23 @@ function vscode_tasksJSON_自动配置功能之主体 ({
         }
     }
 
-    /** @type {Promise<{ 旧有_vscode_tasksJSON_文件之缓冲数据块: Buffer | null; 旧有_tasksJSON_内容全文: string }>} */
-    let 允许创建或修订_vscode_tasksJSON_文件_之期待 = Promise.resolve({
-        旧有_vscode_tasksJSON_文件之缓冲数据块: null,
-        旧有_tasksJSON_内容全文: '',
-    })
+
+
+    /** @type {Buffer | null} */
+    let 旧有_vscode_tasksJSON_文件之缓冲数据块 = null
+
+    /** @type {string} */
+    let 旧有_tasksJSON_内容全文 = ''
 
     if (旧有_vscode_tasksJSON_文件确实存在) {
-        允许创建或修订_vscode_tasksJSON_文件_之期待 = 文件系统工具之扩展版.readFile(vscode_tasksJSON_文件之完整路径).then(
-            旧有_vscode_tasksJSON_文件之缓冲数据块 => {
-                return {
-                    旧有_vscode_tasksJSON_文件之缓冲数据块,
-                    旧有_tasksJSON_内容全文: 旧有_vscode_tasksJSON_文件之缓冲数据块.toString(),
-                }
-            }
-        )
+        旧有_vscode_tasksJSON_文件之缓冲数据块 = 文件系统工具之扩展版.readFileSync(vscode_tasksJSON_文件之完整路径)
+        旧有_tasksJSON_内容全文 = 旧有_vscode_tasksJSON_文件之缓冲数据块.toString()
     }
 
-    return 允许创建或修订_vscode_tasksJSON_文件_之期待.then(({
+    return Promise.resolve({
+        旧有_vscode_tasksJSON_文件之缓冲数据块,
+        旧有_tasksJSON_内容全文,
+    }).then(({
         旧有_vscode_tasksJSON_文件之缓冲数据块,
         旧有_tasksJSON_内容全文,
     }) => {
@@ -271,12 +278,12 @@ function vscode_tasksJSON_自动配置功能之主体 ({
 
         if (微软_jsonc_处理机遭遇的错误列表.length > 0) {
             微软_jsonc_处理机遭遇的错误列表.forEach((错误之记载, 列表编号) => {
-                console.log(`${
+                console.error(`${
                     本工具集一切命令行消息之前缀
                 }\n    ${
                     粉笔工具.redBright(`微软_jsonc_处理机 遇到的错误（第 ${列表编号 + 1} 个）`)
                 }`)
-                console.log(错误之记载)
+                console.error(错误之记载)
             })
         }
 
@@ -334,7 +341,7 @@ function vscode_tasksJSON_自动配置功能之主体 ({
 
                 command: 发布本工具集随附的命令行脚本时_个别脚本文件应发布在目标项目之根文件夹下
                     ? 'pwsh  -Command \'.\\.Push-将代码依次推送至多个集得源.ps1\''
-                    : `pwsh  -Command '.\\${用于研发阶段的命令行工具_这一文件夹之相对路径_用于调用某_PowerShell}\\PowerShell\\Push-将代码依次推送至多个集得源.ps1'`
+                    : `pwsh  -Command '.\\${用于研发阶段的命令行工具集_这一文件夹之相对路径_用于调用某_PowerShell}\\PowerShell\\Push-将代码依次推送至多个集得源.ps1'`
                 ,
 
                 group: 'none',
@@ -355,7 +362,7 @@ function vscode_tasksJSON_自动配置功能之主体 ({
 
                 command: 发布本工具集随附的命令行脚本时_个别脚本文件应发布在目标项目之根文件夹下
                     ? 'bash  -c \'source  ./push-将代码依次推送至多个集得源.sh\''
-                    : `bash  -c 'source  ./${用于研发阶段的命令行工具_这一文件夹之相对路径_用于调用某_bash}/bash/push-将代码依次推送至多个集得源.sh'`
+                    : `bash  -c 'source  ./${用于研发阶段的命令行工具集_这一文件夹之相对路径_用于调用某_bash}/bash/push-将代码依次推送至多个集得源.sh'`
                 ,
 
                 group: 'none',
@@ -411,11 +418,11 @@ function vscode_tasksJSON_自动配置功能之主体 ({
                 消息分隔线
             }\n`)
         } else {
-            console.log(`${
+            console.info(`${
                 本工具集一切命令行消息之前缀
             }\n    ${
                 消息分隔线
-            }\n    综上，将创建 VSCode 的 ${
+            }\n    将创建 VSCode 的 ${
                 粉笔工具.magentaBright('tasks.json')
             } 文件。\n    ${
                 消息分隔线
@@ -434,60 +441,56 @@ function vscode_tasksJSON_自动配置功能之主体 ({
 
 
 
-        return 文件系统工具之扩展版.mkdirp(vscode_tasksJSON_文件所处之文件夹之完整路径).then(() => {
-            let 备份文件已写入磁盘_之期待 = Promise.resolve(true)
-            let 新内容已写入磁盘_之期待 = Promise.resolve(true)
-
-
-
-            if (旧有_vscode_tasksJSON_文件之缓冲数据块 instanceof Buffer && !vscode_tasksJSON_纵使有变动也不应制作备份文件) {
-                const 时间戳 = 求当前时间之文本_可用于文件系统之文件名()
-                const 备份文件之文件名 = `tasks-吴乐川备份于-${时间戳}.json`
-                const 备份文件之文件完整路径 = 路径工具.join(
-                    vscode_tasksJSON_文件所处之文件夹之完整路径,
-                    备份文件之文件名
-                )
-
-                备份文件已写入磁盘_之期待 = 文件系统工具之扩展版.writeFile(备份文件之文件完整路径, 旧有_vscode_tasksJSON_文件之缓冲数据块).then(() => {
-                    console.log(`${
-                        本工具集一切命令行消息之前缀
-                    }\n    VSCode 先前的 ${
-                        粉笔工具.magentaBright('tasks.json')
-                    } 文件已另存为备份：\n    ${
-                        粉笔工具.greenBright(备份文件之文件名)
-                    } 。\n    ${
-                        粉笔工具.green(备份文件之文件完整路径)
-                    }\n`)
-                })
-            }
+        文件系统工具之扩展版.mkdirpSync(vscode_tasksJSON_文件所处之文件夹之完整路径)
 
 
 
 
 
-            新内容已写入磁盘_之期待 = 文件系统工具之扩展版.writeFile(vscode_tasksJSON_文件之完整路径, 拟写入_vscode_tasksJSON_之内容全文).then(() => {
-                console.log(`${
-                    本工具集一切命令行消息之前缀
-                }\n    VSCode 的 ${
-                    粉笔工具.magentaBright('tasks.json')
-                } ${
-                    旧有_vscode_tasksJSON_文件确实存在
-                        ? '文件内容已变更'
-                        : '文件已创建'
-                }。\n    ${
-                    粉笔工具.redBright(vscode_tasksJSON_文件之完整路径)
-                }\n`)
-            })
+        if (旧有_vscode_tasksJSON_文件之缓冲数据块 instanceof Buffer && !vscode_tasksJSON_纵使有变动也不应制作备份文件) {
+            const 时间戳 = 求当前时间之文本_可用于文件系统之文件名()
+            const 备份文件之文件名 = `tasks-吴乐川备份于-${时间戳}.json`
+            const 备份文件之文件完整路径 = 路径工具.join(
+                vscode_tasksJSON_文件所处之文件夹之完整路径,
+                备份文件之文件名
+            )
+
+            文件系统工具之扩展版.writeFileSync(备份文件之文件完整路径, 旧有_vscode_tasksJSON_文件之缓冲数据块)
+
+            console.log(`${
+                本工具集一切命令行消息之前缀
+            }\n    VSCode 先前的 ${
+                粉笔工具.magentaBright('tasks.json')
+            } 文件已另存为备份：\n    ${
+                粉笔工具.greenBright(备份文件之文件名)
+            } 。\n    ${
+                粉笔工具.green(备份文件之文件完整路径)
+            }\n`)
+        }
 
 
 
 
 
-            return Promise.allSettled([
-                备份文件已写入磁盘_之期待,
-                新内容已写入磁盘_之期待,
-            ])
-        })
+        文件系统工具之扩展版.writeFileSync(vscode_tasksJSON_文件之完整路径, 拟写入_vscode_tasksJSON_之内容全文)
+
+        console.info(`${
+            本工具集一切命令行消息之前缀
+        }\n    VSCode 的 ${
+            粉笔工具.magentaBright('tasks.json')
+        } ${
+            旧有_vscode_tasksJSON_文件确实存在
+                ? '文件内容已变更'
+                : '文件已创建'
+        }。\n    ${
+            粉笔工具.redBright(vscode_tasksJSON_文件之完整路径)
+        }\n`)
+
+
+
+
+
+        // 为了日志清晰、有序、易读，我最终还是舍弃了 Promsie.all 或 Promsie.allSettled 的做法，改为顺次执行各功能。
     })
 
 
