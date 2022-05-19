@@ -449,7 +449,7 @@ function vscode_tasksJSON_自动配置功能之主体 ({
 
         if (旧有_vscode_tasksJSON_文件之缓冲数据块 instanceof Buffer && !vscode_tasksJSON_纵使有变动也不应制作备份文件) {
             const 时间戳 = 求当前时间之文本_可用于文件系统之文件名()
-            const 备份文件之文件名 = `tasks-吴乐川备份于-${时间戳}.json`
+            const 备份文件之文件名 = `tasks-吴乐川备份于-${时间戳}.jsonc`
             const 备份文件之文件完整路径 = 路径工具.join(
                 vscode_tasksJSON_文件所处之文件夹之完整路径,
                 备份文件之文件名
