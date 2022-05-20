@@ -96,19 +96,19 @@ git  push  美国GitHub
 
 1.  虽然 Nodejs 往往会随附一个名为 npm 的工具。但是，一来此事并不一定（例如 Ubuntu 环境的 Nodejs 有可能并不附带 npm）；二来即便 Nodejs 附带了一份 npm，该 npm 之版本也未必最新的。**故而，推荐安装 _最新版_ 的 npm 。**
 
-    以下方法假设 Nodejs 确实随附了一份 npm，并利用该随附的、较旧版本的 npm 来安装最新版的 npm 。
+    - 以下方法假定你所安装的 Nodejs 确实随附了一份 npm，并利用该随附的、较旧版本的 npm 来安装最新版的 npm 。
 
-    ```bash
-    # Bash 或 PowerShell
-    npm  i  -g  npm
-    ```
+        ```bash
+        # Bash 或 PowerShell
+        npm  i  -g  npm
+        ```
 
-    > 在 Ubuntu 系统下从零开始安装 npm 的方法如下。
-    > 
-    > ```bash
-    > apt  update
-    > apt  install  npm
-    > ```
+    - 以下假定在 Ubuntu 系统安装 Nodejs 之后， npm 仍未安装。从零开始安装 npm 的步骤如下。
+
+        ```bash
+        apt  update
+        apt  install  npm
+        ```
 
 
 1.  借助 `cd` 命令来到你的项目**根**文件夹，再用以下命令将你的项目初始化成一个 npm 项目。
@@ -118,7 +118,9 @@ git  push  美国GitHub
     npm  init  -y
     ```
 
-1.  正式安装本工具集。
+    > 具体而言，npm 将在该文件夹内创建一个文件，名为“ `package.json` ”，仅此而已。该文件是一切 npm 项目的关键配置，也是该类项目的本质特征。
+
+1.  借助 npm 正式安装本工具集。
 
     ```bash
     # Bash 或 PowerShell
