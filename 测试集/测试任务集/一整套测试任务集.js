@@ -35,6 +35,10 @@
  */
 
 /**
+ * @typedef {typeof import('@wulechuan/text-basic-typography')} 范_吴乐川文本简朴排版工具
+ */
+
+/**
  * @typedef {import('../../源代码/内部功能集/功能集/8-在命令行终端呈现本工具集之简介')} 范_在命令行终端呈现本工具集之简介
  */
 
@@ -106,6 +110,7 @@ module.exports = function 执行全套测试任务 ({
         import('node:path'),
         import('fs-extra'),
         import('jsonc-parser'),
+        import('@wulechuan/text-basic-typography'),
         import('../../源代码/内部功能集/辅助工具集/index.js'),
         import('../../源代码/内部功能集/功能集/8-在命令行终端呈现本工具集之简介.js'),
         import('../../源代码/内部功能集/功能集/2-一切自动安装与配置任务的主体功能.js'),
@@ -114,6 +119,7 @@ module.exports = function 执行全套测试任务 ({
         路径工具_模块,
         文件系统工具之扩展版_模块,
         微软_jsonc_处理机_模块,
+        吴乐川文本简朴排版工具_模块,
         本工具集随附之辅助工具集_模块,
         在命令行终端呈现本工具集之简介_模块,
         本工具集一切自动安装与配置任务之内部总接口_模块,
@@ -132,6 +138,9 @@ module.exports = function 执行全套测试任务 ({
         /** @type {范_微软_jsonc_处理机} */
         const 微软_jsonc_处理机 = 微软_jsonc_处理机_模块.default
 
+        /** @type {范_吴乐川文本简朴排版工具} */
+        const 吴乐川文本简朴排版工具 = 吴乐川文本简朴排版工具_模块
+
         /** @type {范_本工具集随附之辅助工具集} */
         const 本工具集随附之辅助工具集 = 本工具集随附之辅助工具集_模块.default
 
@@ -144,6 +153,10 @@ module.exports = function 执行全套测试任务 ({
 
 
 
+
+        const {
+            将原文本改造为包含简朴排版的新文本,
+        } = 吴乐川文本简朴排版工具
 
         const 本工具集自身_packageJSON_之完整路径 = 路径工具.resolve(本工具集自身_packageJSON_相对于_nodejs_进程工作目录的路径)
 
@@ -186,8 +199,8 @@ module.exports = function 执行全套测试任务 ({
         if (执行各项功能之前应先呈现本工具之简介) {
             在命令行终端呈现本工具集之简介({
                 粉笔工具,
+                将原文本改造为包含简朴排版的新文本,
                 本工具集一切命令行消息之前缀,
-                本工具集随附之辅助工具集,
                 本工具集自身的_packageJSON,
             })
         }

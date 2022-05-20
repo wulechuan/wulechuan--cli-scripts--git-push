@@ -90,9 +90,9 @@ git  push  美国GitHub
 
 ### 安装
 
-本工具集虽运行在命令行环境（PowerShell 或【类 Bash】），且严格来说其**服务对象并不局限于 npm 项目，但其安装部署期间的自动化依赖于 npm** 。自然的，本人令本工具集依托 npm 发行，故安装本工具集也须借助 npm 。方法如下：
+本工具集虽运行在命令行环境（PowerShell 或【类 Bash】），且严格来说其**服务对象并不局限于 npm 项目，但其安装部署期间的自动化依赖于 npm** 。自然的，本人令本工具集依托 npm 发行，故安装本工具集也不妨借助 npm 。脱离 npm 来安装本工具集则略为繁琐。依托 npm 服务框架来安装本工具集之方法如下：
 
-1.  确保你的计算机已经安装了 Nodejs。见《[Nodejs 官方下载页](https://nodejs.org/zh-cn/download/)》。
+1.  确保你的计算机或你的容器中已经安装了 Nodejs。见《[Nodejs 官方下载页](https://nodejs.org/zh-cn/download/)》。
 
 1.  虽然 Nodejs 往往会随附一个名为 npm 的工具。但是，一来此事并不一定（例如 Ubuntu 环境的 Nodejs 有可能并不附带 npm）；二来即便 Nodejs 附带了一份 npm，该 npm 之版本也未必最新的。**故而，推荐安装 _最新版_ 的 npm 。**
 
