@@ -13,6 +13,10 @@
 
 
 
+
+
+
+
 PROCESS {
     # Push-吴乐川集得上推至单个源  '集得源甲之名称'  -集得源之显示名称文本采用的颜色 'Red'
     # Push-吴乐川集得上推至单个源  '集得源乙之名称'  -集得源之显示名称文本采用的颜色 'Blue'
@@ -23,8 +27,14 @@ PROCESS {
 
 
 
+
+
+
+
 BEGIN {
-    Write-Host $PWD
+    # 该名为 BEGIN 之代码块故意安排在 PROCESS 代码块之后。但实际上 BEGIN 会在 PROCESS 之前运行。
+
+    Write-Host "`n【当下工作路径】：`n    '$PWD'"
 
     Write-Host
     Write-Host
@@ -42,6 +52,10 @@ BEGIN {
 
     Write-吴乐川显示_集得上推至一个或多个源_开始之提示语
 }
+
+
+
+
 
 
 

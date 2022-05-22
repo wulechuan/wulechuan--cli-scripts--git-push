@@ -18,6 +18,16 @@ function Write-吴乐川显示一行带装饰线的文字 {
 
 
 
+    BEGIN {
+        [string[]]$合规的颜色值之列表 = [System.Enum]::GetValues([System.ConsoleColor])
+
+        if ("$中央文本之文字颜色" -NotIn $合规的颜色值之列表) { $中央文本之文字颜色 = $Host.UI.RawUI.ForegroundColor }
+        if ("$中央文本之文字底色" -NotIn $合规的颜色值之列表) { $中央文本之文字底色 = $Host.UI.RawUI.BackgroundColor }
+        if ("$装饰线之文字颜色"   -NotIn $合规的颜色值之列表) { $装饰线之文字颜色   = $Host.UI.RawUI.ForegroundColor }
+    }
+
+
+
     PROCESS {
         [int]$中央文本之宽度等效英语字母数 = Get-吴乐川求一行文本视觉宽度等效英语字母数 "$中央文本"
 
@@ -73,15 +83,15 @@ function Write-吴乐川显示一行带装饰线的文字 {
 
         [string[]]$合规的颜色值之列表 = [System.Enum]::GetValues([System.ConsoleColor])
 
-        if (-not ("$中央文本之文字颜色" -in $合规的颜色值之列表)) {
+        if ("$中央文本之文字颜色" -NotIn $合规的颜色值之列表) {
             $_中央文本之文字颜色 = ''
         }
 
-        if (-not ("$中央文本之文字底色" -in $合规的颜色值之列表)) {
+        if ("$中央文本之文字底色" -NotIn $合规的颜色值之列表) {
             $_中央文本之文字底色 = ''
         }
 
-        if (-not ("$装饰线之文字颜色" -in $合规的颜色值之列表)) {
+        if ("$装饰线之文字颜色" -NotIn $合规的颜色值之列表) {
             $_装饰线之文字颜色 = ''
         }
     }
