@@ -18,14 +18,20 @@
 
 
 PROCESS {
-    Add-吴乐川添加单个集得源  -集得源在本机采用的名称 '吴乐川：码云' `
-        -特征颜色 'DarkRed'      -集得源之完整地址 'git@gitee.com:nanchang-wulechuan/wulechuan--cli-scripts--git-push.git'
-    
-    Add-吴乐川添加单个集得源  -集得源在本机采用的名称 '吴乐川：阿里云' `
-        -特征颜色 'Blue'         -集得源之完整地址 'git@code.aliyun.com:wulechuan/wulechuan--cli-scripts--git-push.git'
-    
-    Add-吴乐川添加单个集得源  -集得源在本机采用的名称 '吴乐川：GitHub' `
-        -特征颜色 'Yellow'       -集得源之完整地址 'git@github.com:wulechuan/wulechuan--cli-scripts--git-push.git'
+    Try {
+
+        Add-吴乐川添加单个集得源  -集得源在本机采用的名称 '吴乐川：码云' `
+            -特征颜色 'DarkRed'      -集得源之完整地址 'git@gitee.com:nanchang-wulechuan/wulechuan--cli-scripts--git-push.git'
+
+        Add-吴乐川添加单个集得源  -集得源在本机采用的名称 '吴乐川：阿里云' `
+            -特征颜色 'Blue'         -集得源之完整地址 'git@code.aliyun.com:wulechuan/wulechuan--cli-scripts--git-push.git'
+
+        Add-吴乐川添加单个集得源  -集得源在本机采用的名称 '吴乐川：GitHub' `
+            -特征颜色 'Yellow'       -集得源之完整地址 'git@github.com:wulechuan/wulechuan--cli-scripts--git-push.git'
+
+    } catch {
+        ${private:RunTimeException} = $_
+    }
 }
 
 
@@ -39,10 +45,13 @@ PROCESS {
 BEGIN {
     # 该名为 BEGIN 之代码块故意安排在 PROCESS 代码块之后。但实际上 BEGIN 会在 PROCESS 之前运行。
 
+    ${private:RunTimeException} = $null
+    [string]${private:执行本命令前的工作路径} = "$PWD"
+
     Write-Host "`n【当下工作路径】：`n    '$PWD'"
 
     if ("$PWD" -match "\\用于研发阶段的命令行工具集\\PowerShell`$") {
-        ${local:执行本命令前的工作路径} = "$PWD"
+        ${private:执行本命令前的工作路径} = "$PWD"
         Set-Location '..\..\'
         Write-Host "`n【当下工作路径】临时变更为：`n    '$PWD'"
     }
@@ -54,14 +63,14 @@ BEGIN {
 
 
     # 在采用本工具集的其他 npm 项目中，应这样写：
-    # ${local:吴乐川的模块的路径} = '.\node_modules\@wulechuan\cli-scripts--git-push\源代码\发布的源代码\PowerShell'
+    # [string]${script:吴乐川的模块的路径} = '.\node_modules\@wulechuan\cli-scripts--git-push\源代码\发布的源代码\PowerShell'
 
     # 下方这一行的写法专门针对本工具集自身，不适应于其他任何 npm 项。
-    ${local:吴乐川的模块的路径} = '.\源代码\发布的源代码\PowerShell'
+    [string]${script:吴乐川的模块的路径} = '.\源代码\发布的源代码\PowerShell'
 
-    Import-Module  "${local:吴乐川的模块的路径}\吴乐川-文本处理工具.psm1"
-    Import-Module  "${local:吴乐川的模块的路径}\吴乐川-文本显示工具.psm1"
-    Import-Module  "${local:吴乐川的模块的路径}\吴乐川-集得源管理工具集.psm1"
+    Import-Module  "${script:吴乐川的模块的路径}\吴乐川-数据处理-文本.psm1"
+    Import-Module  "${script:吴乐川的模块的路径}\吴乐川-内容呈现.psm1"
+    Import-Module  "${script:吴乐川的模块的路径}\吴乐川-集得源管理工具集.psm1"
 }
 
 
@@ -73,8 +82,17 @@ BEGIN {
 
 
 END {
-    if (${local:执行本命令前的工作路径} -and ("${local:执行本命令前的工作路径}" -ne "$PWD")) {
+    if (${private:执行本命令前的工作路径} -and ("${private:执行本命令前的工作路径}" -ne "$PWD")) {
+        Set-Location  "${private:执行本命令前的工作路径}"
         Write-Host "`n【当下工作路径】已复原。"
-        Set-Location  "${local:执行本命令前的工作路径}"
+    }
+
+
+
+    if (${private:RunTimeException}) {
+        Write-Host
+        Write-Host -F 'Red' '执行过程曾出错。'
+        Write-Host
+        throw ${private:RunTimeException}
     }
 }

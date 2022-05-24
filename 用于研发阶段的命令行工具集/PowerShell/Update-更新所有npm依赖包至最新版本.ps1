@@ -114,9 +114,10 @@ Write-Host              -F 'DarkRed'                '之【产品依赖包】 ==
 Write-Host
 
 npm  i `
-    'chalk@latest' `
-    'fs-extra@latest' `
-    'jsonc-parser@latest'
+    @wulechuan/text-basic-typography@latest `
+    chalk@latest `
+    fs-extra@latest `
+    jsonc-parser@latest
 
 
 
@@ -163,7 +164,7 @@ Write-Host              -F 'DarkGreen'              '之【研发依赖包】 ==
 Write-Host
 
 npm  i  -D `
-    'eslint@latest'
+    eslint@latest
 
 
 
@@ -210,9 +211,9 @@ Write-Host
 Write-Host  '暂无。'
 
 
-    
-    
-    
+
+
+
 # -------------------------------------------------------
 #           结束
 # -------------------------------------------------------
