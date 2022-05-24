@@ -62,11 +62,11 @@ BEGIN {
 
 
 
-    # 在采用本工具集的其他 npm 项目中，应这样写：
-    # [string]${script:吴乐川的模块的路径} = '.\node_modules\@wulechuan\cli-scripts--git-push\源代码\发布的源代码\PowerShell'
-
     # 下方这一行的写法专门针对本工具集自身，不适应于其他任何 npm 项。
     [string]${script:吴乐川的模块的路径} = '.\源代码\发布的源代码\PowerShell'
+
+    # 在采用本工具集的其他 npm 项目中，应这样写：
+    # [string]${script:吴乐川的模块的路径} = '.\node_modules\@wulechuan\cli-scripts--git-push\源代码\发布的源代码\PowerShell'
 
     Import-Module  "${script:吴乐川的模块的路径}\吴乐川-数据处理-文本.psm1"
     Import-Module  "${script:吴乐川的模块的路径}\吴乐川-内容呈现.psm1"
