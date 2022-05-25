@@ -30,7 +30,9 @@ PROCESS {
         #     -特征颜色 'Yellow'       -集得源之完整地址 '集得源丙之统一资源定位符'
 
     } catch {
+
         ${private:RunTimeException} = $_
+
     }
 }
 

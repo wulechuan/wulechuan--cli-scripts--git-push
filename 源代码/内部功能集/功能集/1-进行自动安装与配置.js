@@ -205,10 +205,10 @@ function 执行全套部署任务 ({
 
 
 
-        // console.debug('\n @wulechuan/cli-scripts--git-push 本工具集自身的_packageJSON', 本工具集自身的_packageJSON, '\n')
-        // console.debug('\n @wulechuan/cli-scripts--git-push__dirname\n   ', __dirname, '\n')
-        // console.debug('\n @wulechuan/cli-scripts--git-push 本工具集自身根文件夹之完整路径\n   ', 本工具集自身根文件夹之完整路径, '\n')
-        // console.debug('\n @wulechuan/cli-scripts--git-push 用于容纳发布的各命令行脚本的文件树之根文件夹之完整路径\n   ', 用于容纳发布的各命令行脚本的文件树之根文件夹之完整路径, '\n')
+        // 应开启调试功能 && console.debug('\n @wulechuan/cli-scripts--git-push 本工具集自身的_packageJSON', 本工具集自身的_packageJSON, '\n')
+        // 应开启调试功能 && console.debug('\n @wulechuan/cli-scripts--git-push__dirname \n   ', __dirname, '\n')
+        // 应开启调试功能 && console.debug('\n @wulechuan/cli-scripts--git-push 本工具集自身根文件夹之完整路径 \n   ', 本工具集自身根文件夹之完整路径, '\n')
+        // 应开启调试功能 && console.debug('\n @wulechuan/cli-scripts--git-push 用于容纳发布的各命令行脚本的文件树之根文件夹之完整路径 \n   ', 用于容纳发布的各命令行脚本的文件树之根文件夹之完整路径, '\n')
 
 
 

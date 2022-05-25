@@ -185,7 +185,6 @@ Write-Host
 Write-Host  -F 'DarkYellow'  '===== 更新与研发相关的数据库 ======================================='
 
 Write-Host
-Write-Host
 
 Write-Host  '暂无。'
 # npx  browserslist@latest  --update-db

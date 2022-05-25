@@ -99,7 +99,6 @@ echo
 echo  -e  "\e[33m===== 更新与研发相关的数据库 =======================================\e[0;0m"
 
 echo
-echo
 
 echo  '暂无。'
 # npx  browserslist@latest  --update-db

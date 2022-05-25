@@ -25,7 +25,9 @@ PROCESS {
         # Push-吴乐川集得上推至单个源  '集得源丙之名称'  -集得源之显示名称文本采用的颜色 'Yellow'
 
     } catch {
+
         ${private:RunTimeException} = $_
+
     }
 }
 
