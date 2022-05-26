@@ -1,7 +1,7 @@
 #!/bin/bash
 
-source  './node_modules\@wulechuan\cli-scripts--npm-project-helpers\源代码/发布的源代码/bash/吴乐川-打印-json.sh'
-source  './node_modules\@wulechuan\cli-scripts--npm-project-helpers\源代码/发布的源代码/bash/吴乐川-管理某-npm-项目的依赖包等资源.sh'
+source  './node_modules/@wulechuan/cli-scripts--npm-project-helpers/源代码/发布的源代码/bash/吴乐川-打印-json.sh'
+source  './node_modules/@wulechuan/cli-scripts--npm-project-helpers/源代码/发布的源代码/bash/吴乐川-管理某-npm-项目的依赖包等资源.sh'
 
 SHOULD_REMOVE_NODE_MODULES_FIRST=1
 SHOULD_REMOVE_PACKAGE_LOCK_JSON_FIRST=1
@@ -42,7 +42,7 @@ function 完整流程  {
 
     # ───────────────────────────────────────────────────────────────
     #  3) 安装依赖包。【产品级】、【甲】类。
-    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     #     顺便提醒，虽然一般而言 latest 版本应恰为最高版本，但并不确保。
     # ───────────────────────────────────────────────────────────────
 
@@ -67,20 +67,22 @@ function 完整流程  {
         echo  '        fs-extra@latest \'
         echo  '        jsonc-parser@latest'
 
-        echo
-        echo  -en  "\e[0;31m"
-        Write-Line-without-line-break
-        echo  -e   "\e[0;0m"
-        echo
+        echo  -en  "\n\e[0;31m"; Write-Line-without-line-break; echo  -e  "\e[0;0m"
 
         if [ $ShouldDryRun -eq 0 ]; then
 
             # ───────────────────────────
+
+            # [ 0 ]        # 当本 else 语句块中没有其它语句时，这句必须存在。
+
+            # ───────────────────────────
+
             npm  i \
                 @wulechuan/text-basic-typography@latest \
                 chalk@latest \
                 fs-extra@latest \
                 jsonc-parser@latest
+
             # ───────────────────────────
 
         fi
@@ -116,19 +118,19 @@ function 完整流程  {
 
         # echo  'npm  i  ????????@0.0.0'
 
-        echo
-        echo  -en  "\e[0;31m"
-        Write-Line-without-line-break
-        echo  -e   "\e[0;0m"
-        echo
+        echo  -en  "\n\e[0;31m"; Write-Line-without-line-break; echo  -e  "\e[0;0m"
 
         if [ $ShouldDryRun -eq 0 ]; then
 
             # ───────────────────────────
-            # 暂无。
+
+            [ 0 ]        # 当本 else 语句块中没有其它语句时，这句必须存在。
+
+            # ───────────────────────────
+            # 暂无任务。故此处无任何信息。
             # ───────────────────────────
 
-            [ 0 ]
+            # 不妨把任务写在这里。
 
             # ───────────────────────────
 
@@ -146,7 +148,7 @@ function 完整流程  {
 
     # ───────────────────────────────────────────────────────────────
     #  3) 安装依赖包。【研发级】、【甲】类。
-    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     #     顺便提醒，虽然一般而言 latest 版本应恰为最高版本，但并不确保。
     # ───────────────────────────────────────────────────────────────
 
@@ -166,21 +168,23 @@ function 完整流程  {
         fi
 
         echo  '    npm  i  -D \'
-        echo  '        @wulechuan/cli-scripts--npm-project-helpers \'
+        echo  '        @wulechuan/cli-scripts--npm-project-helpers@latest \'
         echo  '        eslint@latest'
 
-        echo
-        echo  -en  "\e[0;32m"
-        Write-Line-without-line-break
-        echo  -e   "\e[0;0m"
-        echo
+        echo  -en  "\n\e[0;32m"; Write-Line-without-line-break; echo  -e  "\e[0;0m"
 
         if [ $ShouldDryRun -eq 0 ]; then
 
             # ───────────────────────────
+
+            # [ 0 ]        # 当本 else 语句块中没有其它语句时，这句必须存在。
+
+            # ───────────────────────────
+
             npm  i  -D \
-                @wulechuan/cli-scripts--npm-project-helpers \
+                @wulechuan/cli-scripts--npm-project-helpers@latest \
                 eslint@latest
+
             # ───────────────────────────
 
         fi
@@ -216,19 +220,19 @@ function 完整流程  {
 
         # echo  'npm  i  -D  ????????@0.0.0'
 
-        echo
-        echo  -en  "\e[0;32m"
-        Write-Line-without-line-break
-        echo  -e   "\e[0;0m"
-        echo
+        echo  -en  "\n\e[0;32m"; Write-Line-without-line-break; echo  -e  "\e[0;0m"
 
         if [ $ShouldDryRun -eq 0 ]; then
 
             # ───────────────────────────
-            # 暂无。
+
+            [ 0 ]        # 当本 else 语句块中没有其它语句时，这句必须存在。
+
+            # ───────────────────────────
+            # 暂无任务。故此处无任何信息。
             # ───────────────────────────
 
-            [ 0 ]
+            # 不妨把任务写在这里。
 
             # ───────────────────────────
 
@@ -246,7 +250,7 @@ function 完整流程  {
 
     # ───────────────────────────────────────────────────────────────
     #  4) 更新与研发相关的数据库。
-    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     #     例如： Browserslist:caniuse-lite
     # ───────────────────────────────────────────────────────────────
 
@@ -258,14 +262,27 @@ function 完整流程  {
 
     else
 
-        if [ $ShouldDryRun -eq 1 ]; then
+        # ───────────────────────────
 
-            # ───────────────────────────
-            # npx  browserslist@latest  --update-db
-            [ 0 ]
-            # ───────────────────────────
+        # [ 0 ]        # 当本 else 语句块中没有其它语句时，这句必须存在。
 
+        # ───────────────────────────
+
+        if false; then
+            if [ $ShouldDryRun -eq 1 ]; then
+                echo  -en  "   \e[0;33m【仿真演练】\e[0;0m\n    "
+            fi
+
+            echo  'npx  browserslist@latest  --update-db'
+
+            if [ $ShouldDryRun -eq 0 ]; then
+                npx  browserslist@latest  --update-db
+            fi
+
+            echo
         fi
+
+        # ───────────────────────────
 
     fi
 
@@ -289,32 +306,32 @@ function 完整流程  {
 
     else
 
-        if [ $ShouldDryRun -eq 1 ]; then
+        # ───────────────────────────
+        # 此处不妨做些关于当前 npm 项目的必要交代。
+        # 例如注意事项、关键步骤等等。
+        # ───────────────────────────
 
-            # ───────────────────────────
-            # 此处不妨做些关于当前 npm 项目的必要交代。
-            # 例如注意事项、关键步骤等等。
-            # ───────────────────────────
+        [ 0 ]        # 当本 else 语句块中没有其它语句时，这句必须存在。
 
-            [ 0 ]
+        # ───────────────────────────
 
-            # echo -e "\e[33m以下是一个 JavaScript 对象。\e[0;0m"
-            # echo
-            # echo '{'
-            # Write-吴乐川打印_JSON_键          -Indent 1 '爷爷' -ValueIsObject
-            # Write-吴乐川打印_JSON_键          -Indent 2 '葫芦娃' -ValueIsObject
-            # echo
-            # Write-吴乐川打印_JSON_注释_并换行  -Indent 3 '// 实验证明，截止 2022-05-26 ，'
-            # Write-吴乐川打印_JSON_注释_并换行  -Indent 3 '// 大娃必须是力娃子。'
-            # Write-吴乐川打印_JSON_键          -Indent 3 '大娃'
-            # Write-乐川打印_JSON_值_文本型      -IsValueOfLastKey '力娃子'
-            # Write-吴乐川打印_JSON_某字典结束    -Indent 2
-            # Write-吴乐川打印_JSON_某字典结束    -Indent 1
-            # Write-吴乐川打印_JSON_某字典结束    -Indent 0
+        # echo -e "\e[33m以下是一个 JavaScript 对象。\e[0;0m"
+        # echo
+        # echo '{'
 
-            # ───────────────────────────
+        # Write-吴乐川打印_JSON_键          -Indent 1 '爷爷' -ValueIsObject
+        # Write-吴乐川打印_JSON_键          -Indent 2 '葫芦娃' -ValueIsObject
+        # echo
+        # Write-吴乐川打印_JSON_注释_并换行  -Indent 3 '// 实验证明，截止 2022-05-26 ，'
+        # Write-吴乐川打印_JSON_注释_并换行  -Indent 3 '// 大娃必须是力娃子。'
+        # Write-吴乐川打印_JSON_键          -Indent 3 '大娃'
+        # Write-吴乐川打印_JSON_值_文本型    -IsValueOfLastKey '力娃子'
+        # Write-吴乐川打印_JSON_某字典结束    -Indent 2
+        # Write-吴乐川打印_JSON_某字典结束    -Indent 1
 
-        fi
+        # echo '}'
+
+        # ───────────────────────────
 
     fi
 
