@@ -166,6 +166,7 @@ function 完整流程  {
         fi
 
         echo  '    npm  i  -D \'
+        echo  '        @wulechuan/cli-scripts--npm-project-helpers \'
         echo  '        eslint@latest'
 
         echo
@@ -178,6 +179,7 @@ function 完整流程  {
 
             # ───────────────────────────
             npm  i  -D \
+                @wulechuan/cli-scripts--npm-project-helpers \
                 eslint@latest
             # ───────────────────────────
 
