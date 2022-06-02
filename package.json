@@ -1,6 +1,6 @@
 {
   "name": "@wulechuan/cli-scripts--git-push",
-  "version": "6.0.8",
+  "version": "6.0.9",
   "author": "吴乐川 <wulechuan@live.com>",
   "license": "WTFPL",
   "description": "此为吴乐川的《管理【集得】源的辅助性命令行工具集》。  本工具集目前提供了若干可配置的内部工具， 以辅助任何 npm 项目构建适用其环境的命令行实用工具。  而构建出的这些实用工具可一次性将该 npm 项目之代码上推至多个集得源。  本工具集亦随附了这些实用工具的雏形，稍加修改即可运转，颇为方便。  本工具集安装伊始， 其内建的 JavaScript 程序会自动为这些实用工具设计配套的 VSCode 任务， 遂更为方便。  需注意， 本套工具之主体均并非采用 JavaScript 语言族编写， 而是采用 2 种命令行环境之语言编写， 即 PowerShell 语言和 Bash 语言。 故本工具之主体仅用于（多种）命令行环境。",
@@ -20,7 +20,7 @@
     "jsonc-parser": "^3.0.0"
   },
   "devDependencies": {
-    "@wulechuan/cli-scripts--npm-project-helpers": "^1.1.2",
+    "@wulechuan/cli-scripts--npm-project-helpers": "^1.2.1",
     "eslint": "^8.16.0"
   },
   "homepage": "https://github.com/wulechuan/wulechuan--cli-scripts--git-push#readme",
